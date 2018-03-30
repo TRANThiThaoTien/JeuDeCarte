@@ -1,0 +1,270 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EB68115A206A844C00AF0AEF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB681159206A844C00AF0AEF /* main.cpp */; };
+		EB681162206A84A800AF0AEF /* Joueur.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB681160206A84A800AF0AEF /* Joueur.cpp */; };
+		EB681165206A84BF00AF0AEF /* Carte.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB681163206A84BF00AF0AEF /* Carte.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EB681154206A844C00AF0AEF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		EB681156206A844C00AF0AEF /* Jeu_de_Carte */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Jeu_de_Carte; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB681159206A844C00AF0AEF /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		EB681160206A84A800AF0AEF /* Joueur.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Joueur.cpp; sourceTree = "<group>"; };
+		EB681161206A84A800AF0AEF /* Joueur.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Joueur.hpp; sourceTree = "<group>"; };
+		EB681163206A84BF00AF0AEF /* Carte.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Carte.cpp; sourceTree = "<group>"; };
+		EB681164206A84BF00AF0AEF /* Carte.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Carte.hpp; sourceTree = "<group>"; };
+		EB6AD8A8206E56E9009E050E /* Utilities.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Utilities.hpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EB681153206A844C00AF0AEF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EB68114D206A844C00AF0AEF = {
+			isa = PBXGroup;
+			children = (
+				EB681158206A844C00AF0AEF /* Jeu_de_Carte */,
+				EB681157206A844C00AF0AEF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EB681157206A844C00AF0AEF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EB681156206A844C00AF0AEF /* Jeu_de_Carte */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EB681158206A844C00AF0AEF /* Jeu_de_Carte */ = {
+			isa = PBXGroup;
+			children = (
+				EB681159206A844C00AF0AEF /* main.cpp */,
+				EB681161206A84A800AF0AEF /* Joueur.hpp */,
+				EB681160206A84A800AF0AEF /* Joueur.cpp */,
+				EB681164206A84BF00AF0AEF /* Carte.hpp */,
+				EB681163206A84BF00AF0AEF /* Carte.cpp */,
+				EB6AD8A8206E56E9009E050E /* Utilities.hpp */,
+			);
+			path = Jeu_de_Carte;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EB681155206A844C00AF0AEF /* Jeu_de_Carte */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB68115D206A844C00AF0AEF /* Build configuration list for PBXNativeTarget "Jeu_de_Carte" */;
+			buildPhases = (
+				EB681152206A844C00AF0AEF /* Sources */,
+				EB681153206A844C00AF0AEF /* Frameworks */,
+				EB681154206A844C00AF0AEF /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Jeu_de_Carte;
+			productName = Jeu_de_Carte;
+			productReference = EB681156206A844C00AF0AEF /* Jeu_de_Carte */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EB68114E206A844C00AF0AEF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Thi Thao Tien";
+				TargetAttributes = {
+					EB681155206A844C00AF0AEF = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = EB681151206A844C00AF0AEF /* Build configuration list for PBXProject "Jeu_de_Carte" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EB68114D206A844C00AF0AEF;
+			productRefGroup = EB681157206A844C00AF0AEF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EB681155206A844C00AF0AEF /* Jeu_de_Carte */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EB681152206A844C00AF0AEF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB68115A206A844C00AF0AEF /* main.cpp in Sources */,
+				EB681162206A84A800AF0AEF /* Joueur.cpp in Sources */,
+				EB681165206A84BF00AF0AEF /* Carte.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		EB68115B206A844C00AF0AEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		EB68115C206A844C00AF0AEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		EB68115E206A844C00AF0AEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EB68115F206A844C00AF0AEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EB681151206A844C00AF0AEF /* Build configuration list for PBXProject "Jeu_de_Carte" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB68115B206A844C00AF0AEF /* Debug */,
+				EB68115C206A844C00AF0AEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB68115D206A844C00AF0AEF /* Build configuration list for PBXNativeTarget "Jeu_de_Carte" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB68115E206A844C00AF0AEF /* Debug */,
+				EB68115F206A844C00AF0AEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EB68114E206A844C00AF0AEF /* Project object */;
+}
