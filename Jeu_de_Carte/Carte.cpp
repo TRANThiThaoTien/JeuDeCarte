@@ -20,11 +20,12 @@ Type_of_Carte Carte:: get_type_carte(){
     return m_type_carte;
 };
 
-int Carte::get_value_carte(){
+Value_of_Carte Carte::get_value_carte(){
     return m_value_carte;
 };
 
-void Carte::set_value_carte(int value_carte){
+void Carte::set_value_carte(Value_of_Carte value_carte){
     m_value_carte= value_carte;
 };
+
 

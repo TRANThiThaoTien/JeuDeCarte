@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB4B7553206F8AEA002895E2 /* Joueur_physic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB4B7551206F8AEA002895E2 /* Joueur_physic.cpp */; };
+		EB4B7556206F8B01002895E2 /* Joueur_virtuel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB4B7554206F8B01002895E2 /* Joueur_virtuel.cpp */; };
 		EB68115A206A844C00AF0AEF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB681159206A844C00AF0AEF /* main.cpp */; };
 		EB681162206A84A800AF0AEF /* Joueur.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB681160206A84A800AF0AEF /* Joueur.cpp */; };
 		EB681165206A84BF00AF0AEF /* Carte.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB681163206A84BF00AF0AEF /* Carte.cpp */; };
+		EBCEFAAC206E651300AFB75B /* Jeu_de_Carte.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBCEFAAA206E651300AFB75B /* Jeu_de_Carte.cpp */; };
+		EBCEFAAF206E725700AFB75B /* Match.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBCEFAAD206E725700AFB75B /* Match.cpp */; };
+		EBCEFAB2206E83BD00AFB75B /* Main_Joueur.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBCEFAB0206E83BD00AFB75B /* Main_Joueur.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +30,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EB4B7551206F8AEA002895E2 /* Joueur_physic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Joueur_physic.cpp; sourceTree = "<group>"; };
+		EB4B7552206F8AEA002895E2 /* Joueur_physic.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Joueur_physic.hpp; sourceTree = "<group>"; };
+		EB4B7554206F8B01002895E2 /* Joueur_virtuel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Joueur_virtuel.cpp; sourceTree = "<group>"; };
+		EB4B7555206F8B01002895E2 /* Joueur_virtuel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Joueur_virtuel.hpp; sourceTree = "<group>"; };
 		EB681156206A844C00AF0AEF /* Jeu_de_Carte */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Jeu_de_Carte; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB681159206A844C00AF0AEF /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		EB681160206A84A800AF0AEF /* Joueur.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Joueur.cpp; sourceTree = "<group>"; };
@@ -32,6 +41,12 @@
 		EB681163206A84BF00AF0AEF /* Carte.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Carte.cpp; sourceTree = "<group>"; };
 		EB681164206A84BF00AF0AEF /* Carte.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Carte.hpp; sourceTree = "<group>"; };
 		EB6AD8A8206E56E9009E050E /* Utilities.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Utilities.hpp; sourceTree = "<group>"; };
+		EBCEFAAA206E651300AFB75B /* Jeu_de_Carte.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Jeu_de_Carte.cpp; sourceTree = "<group>"; };
+		EBCEFAAB206E651300AFB75B /* Jeu_de_Carte.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Jeu_de_Carte.hpp; sourceTree = "<group>"; };
+		EBCEFAAD206E725700AFB75B /* Match.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Match.cpp; sourceTree = "<group>"; };
+		EBCEFAAE206E725700AFB75B /* Match.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Match.hpp; sourceTree = "<group>"; };
+		EBCEFAB0206E83BD00AFB75B /* Main_Joueur.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Main_Joueur.cpp; sourceTree = "<group>"; };
+		EBCEFAB1206E83BD00AFB75B /* Main_Joueur.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Main_Joueur.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +80,18 @@
 			isa = PBXGroup;
 			children = (
 				EB681159206A844C00AF0AEF /* main.cpp */,
+				EB4B7555206F8B01002895E2 /* Joueur_virtuel.hpp */,
+				EB4B7554206F8B01002895E2 /* Joueur_virtuel.cpp */,
+				EB4B7552206F8AEA002895E2 /* Joueur_physic.hpp */,
+				EB4B7551206F8AEA002895E2 /* Joueur_physic.cpp */,
 				EB681161206A84A800AF0AEF /* Joueur.hpp */,
 				EB681160206A84A800AF0AEF /* Joueur.cpp */,
+				EBCEFAAB206E651300AFB75B /* Jeu_de_Carte.hpp */,
+				EBCEFAAA206E651300AFB75B /* Jeu_de_Carte.cpp */,
+				EBCEFAAE206E725700AFB75B /* Match.hpp */,
+				EBCEFAAD206E725700AFB75B /* Match.cpp */,
+				EBCEFAB1206E83BD00AFB75B /* Main_Joueur.hpp */,
+				EBCEFAB0206E83BD00AFB75B /* Main_Joueur.cpp */,
 				EB681164206A84BF00AF0AEF /* Carte.hpp */,
 				EB681163206A84BF00AF0AEF /* Carte.cpp */,
 				EB6AD8A8206E56E9009E050E /* Utilities.hpp */,
@@ -132,8 +157,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB68115A206A844C00AF0AEF /* main.cpp in Sources */,
+				EBCEFAAF206E725700AFB75B /* Match.cpp in Sources */,
+				EBCEFAB2206E83BD00AFB75B /* Main_Joueur.cpp in Sources */,
 				EB681162206A84A800AF0AEF /* Joueur.cpp in Sources */,
 				EB681165206A84BF00AF0AEF /* Carte.cpp in Sources */,
+				EBCEFAAC206E651300AFB75B /* Jeu_de_Carte.cpp in Sources */,
+				EB4B7553206F8AEA002895E2 /* Joueur_physic.cpp in Sources */,
+				EB4B7556206F8B01002895E2 /* Joueur_virtuel.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

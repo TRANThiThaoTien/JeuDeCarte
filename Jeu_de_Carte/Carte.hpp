@@ -17,16 +17,15 @@ class Carte {
     
 public:
 
-    int get_value_carte();
-    void set_value_carte(int value_carte);
+    Value_of_Carte get_value_carte();
+    void set_value_carte(Value_of_Carte value_carte);
     Type_of_Carte get_type_carte();
     void set_type_carte(Type_of_Carte type_carte);
-    //void set_value_jeu_de_carte();
+    static Carte NullObject;
     
 private:
     
-    //int jeu_de_carte[52];
-    int m_value_carte;
+    Value_of_Carte m_value_carte;
     Type_of_Carte m_type_carte;
 };
 
