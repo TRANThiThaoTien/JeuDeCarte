@@ -9,7 +9,7 @@
 #include "Carte.hpp"
 
 using namespace std;
-
+Carte::Carte(int empty): m_empty(1){};
 void Carte::set_type_carte(Type_of_Carte type_carte){
     
     m_type_carte = type_carte;
@@ -27,5 +27,10 @@ Value_of_Carte Carte::get_value_carte(){
 void Carte::set_value_carte(Value_of_Carte value_carte){
     m_value_carte= value_carte;
 };
-
+void Carte::set_empty(int empty){
+    m_empty=empty;
+};
+int Carte::get_empty(){
+    return m_empty;
+};
 

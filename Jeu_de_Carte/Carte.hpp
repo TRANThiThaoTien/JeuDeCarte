@@ -21,11 +21,14 @@ public:
     void set_value_carte(Value_of_Carte value_carte);
     Type_of_Carte get_type_carte();
     void set_type_carte(Type_of_Carte type_carte);
-    static Carte NullObject;    
+    void set_empty(int empty);
+    int get_empty();
+    Carte(int empty);
 private:
     
     Value_of_Carte m_value_carte;
     Type_of_Carte m_type_carte;
+    int m_empty;
 };
 
 

@@ -82,12 +82,10 @@ void Jeu_de_Carte:: distribuer_carte(int number_joueur, Carte* carte_to_distribu
             int number_carte_en_main(0);
             srand((int)time(0));
             position_carte = rand()%52+1;
-            if (&carte_to_distribuer[position_carte] != 0) {
+            if (carte_to_distribuer[position_carte].get_empty() != 0) {
                 carte_en_main[number_carte_en_main]= carte_to_distribuer[position_carte];
                 number_carte_en_main++;
-                //Sửa lỗi pointer
-                
-                carte_to_distribuer[position_carte]=Carte::NullObject;
+                carte_to_distribuer[position_carte].set_empty(0);
             }
         }
         Main_Joueur main;
