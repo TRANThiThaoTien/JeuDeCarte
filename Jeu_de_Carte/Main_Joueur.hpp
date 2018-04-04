@@ -15,23 +15,25 @@
 class Main_Joueur{
 
 public:
-    
-    void attack_single(Carte* carte_en_main[]);
-    void attack_double(Carte* carte_en_main[]);
-    void attack_plural(Carte* carte_en_main[]);
-    void set_carte_en_main(Carte carte_en_main[]);
+    Main_Joueur();
+    ~Main_Joueur();
+    void attack_single(Carte* p_carte_en_main);
+    void attack_double(Carte* p_carte_en_main);
+    void attack_plural(Carte* p_carte_en_main);
+    void set_carte_en_main(Carte* p_carte_en_main);
     Carte get_carte_en_main();
     void set_carte_to_fight();
     Carte get_carte_to_fight();
-    void print_carte_en_main(Carte* carte_en_main[]);
-    bool test_position_carte(Carte* carte_en_main[]);
+    void print_carte_en_main(Carte* p_carte_en_main) const;
+    bool test_position_carte(Carte* p_carte_en_main);
     bool test_position_int(std::string position);
-    int test_postion_existed(Carte* carte_en_main[],std::string position);
+    int test_postion_existed(Carte* p_carte_en_main,std::string position);
     
 private:
     
-    Carte m_carte_en_main[13];
-    Carte m_carte_to_fight[13];
+    Carte* m_p_carte_en_main;
+    Carte* m_p_carte_to_fight;
+    int * m_p_is_valid_carte_tab;
 };
 
 

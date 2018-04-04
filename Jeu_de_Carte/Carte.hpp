@@ -16,7 +16,9 @@
 class Carte {
     
 public:
-
+    
+    Carte(Type_of_Carte carte_type, Value_of_Carte carte_value);
+    ~Carte();
     Value_of_Carte get_value_carte();
     void set_value_carte(Value_of_Carte value_carte);
     Type_of_Carte get_type_carte();

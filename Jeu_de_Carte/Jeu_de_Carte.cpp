@@ -9,6 +9,14 @@
 #include "Jeu_de_Carte.hpp"
 #include <ctime>
 
+Jeu_de_Carte::Jeu_de_Carte(){
+    m_carte_tab = (Carte *)malloc(52*sizeof(Carte));
+}
+// Pareillement de déstructeur
+Jeu_de_Carte::~Jeu_de_Carte(){
+    
+}
+
 void Jeu_de_Carte::set_carte(){
     for (int i(0); i<52; i++) {
         if (i%4==0) {
@@ -76,7 +84,7 @@ void Jeu_de_Carte:: distribuer_carte(int number_joueur, Carte* carte_to_distribu
     Joueur joueur_tab[number_joueur];
     for (int i(0); i<number_joueur; i++) {
         int j(0);
-        Carte carte_en_main[13];
+        Carte* carte_en_main = (Carte *)malloc(13*sizeof(Carte));
         while (j<13) {
             int position_carte(0);
             int number_carte_en_main(0);

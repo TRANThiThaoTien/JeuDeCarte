@@ -10,6 +10,11 @@
 
 using namespace std;
 
+Carte::Carte(Type_of_Carte carte_type, Value_of_Carte carte_value): m_type_carte(carte_type), m_value_carte(carte_value){
+}
+Carte::~Carte(){
+    
+}
 void Carte::set_type_carte(Type_of_Carte type_carte){
     
     m_type_carte = type_carte;

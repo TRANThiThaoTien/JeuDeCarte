@@ -11,6 +11,12 @@
 
 using namespace std;
 
+Match::Match(){
+    m_is_over = false;
+    m_tour = 0;
+};
+Match::~Match(){
+};
 void Match::set_tour(int tour){
     m_tour=tour;
 };

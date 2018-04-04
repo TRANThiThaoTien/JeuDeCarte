@@ -17,15 +17,15 @@
 
 class Jeu_de_Carte {
 public:
+    Jeu_de_Carte();
+    ~Jeu_de_Carte();
     
     void distribuer_carte(int number_joueur, Carte* carte_to_distribuer[]);
     void set_carte();
     //Carte get_carte(int i);
     Carte get_carte();
-    Carte m_carte_tab[52];
-private:
-    
-    //Carte m_carte_tab[52];
+public:
+    Carte* m_carte_tab;
 };
 
 #endif /* Jeu_de_Carte_hpp */
