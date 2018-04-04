@@ -16,17 +16,17 @@ class Main_Joueur{
 
 public:
     
-    void attack_single(Carte* carte_en_main[]);
-    void attack_double(Carte* carte_en_main[]);
-    void attack_plural(Carte* carte_en_main[]);
+    void attack_single(Carte* carte_en_main);
+    void attack_double(Carte* carte_en_main);
+    void attack_plural(Carte* carte_en_main);
     void set_carte_en_main(Carte carte_en_main[]);
     Carte get_carte_en_main();
     void set_carte_to_fight();
     Carte get_carte_to_fight();
-    void print_carte_en_main(Carte* carte_en_main[]);
-    bool test_position_carte(Carte* carte_en_main[]);
+    void print_carte_en_main(Carte* carte_en_main);
+    bool test_position_carte(Carte* carte_en_main);
     bool test_position_int(std::string position);
-    int test_postion_existed(Carte* carte_en_main[],std::string position);
+    int test_postion_existed(Carte* carte_en_main,std::string position);
     
 private:
     

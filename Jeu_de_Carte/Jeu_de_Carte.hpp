@@ -18,10 +18,10 @@
 class Jeu_de_Carte {
 public:
     
-    void distribuer_carte(int number_joueur, Carte* carte_to_distribuer[]);
+    void distribuer_carte(int number_joueur, Carte* carte_to_distribuer);
     void set_carte();
     //Carte get_carte(int i);
-    Carte get_carte();
+    Carte* get_carte();
     Carte m_carte_tab[52];
 private:
     

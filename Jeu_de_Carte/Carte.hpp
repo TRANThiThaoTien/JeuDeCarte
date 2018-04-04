@@ -21,8 +21,7 @@ public:
     void set_value_carte(Value_of_Carte value_carte);
     Type_of_Carte get_type_carte();
     void set_type_carte(Type_of_Carte type_carte);
-    static Carte NullObject;
-    
+    static Carte NullObject;    
 private:
     
     Value_of_Carte m_value_carte;

@@ -25,7 +25,7 @@ public:
     bool get_tour();
     void set_tour(bool tour);
     bool ignore();
-    void attack(Main_Joueur main, Carte carte_en_main[]);
+    void attack(Main_Joueur main, Carte* carte_en_main);
     Main_Joueur get_main_jouer();
     Main_Joueur set_main_joueur(Main_Joueur main);
     

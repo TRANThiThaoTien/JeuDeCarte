@@ -38,22 +38,20 @@ bool Joueur::ignore(){
 };
 
 //Déclarer action :  call function attack() in class Main
-void Joueur::attack(Main_Joueur main, Carte carte_en_main[]){
-    if (m_tour==true) {
+void Joueur::attack(Main_Joueur main, Carte* carte_en_main){
         string number_of_carte(0);
         cout << "Choose the strategy to attack : " << endl;
         cout << "Enter the number of carte you want to fight" << endl;
         getline(cin, number_of_carte);
         if (number_of_carte=="1") {
-            main.attack_single(&carte_en_main);
+            main.attack_single(carte_en_main);
         }
         else if (number_of_carte=="2"){
-            main.attack_double(&carte_en_main);
+            main.attack_double(carte_en_main);
         }
         else {
-            main.attack_plural(&carte_en_main);
+            main.attack_plural(carte_en_main);
         }
-    }
 };
 
 

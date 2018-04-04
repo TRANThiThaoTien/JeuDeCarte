@@ -17,10 +17,11 @@ void Main_Joueur:: set_carte_en_main(Carte carte_en_main[13]){
         m_carte_en_main[i]=carte_en_main[i];
     }
 };
-void Main_Joueur:: print_carte_en_main(Carte* carte_en_main[]){
+void Main_Joueur:: print_carte_en_main(Carte* carte_en_main){
     for (int i(0); i<13; i++) {
-        if (carte_en_main[i]!=0) {
-            cout<< "position " << i << ":" << carte_en_main[i] << endl;
+        if (&carte_en_main[i]!=0) {
+            Carte carte = carte_en_main[i];
+            cout<< "position " << i << ":" << carte.get_type_carte() << carte.get_value_carte() << endl;
         }
     }
 };
@@ -35,10 +36,10 @@ bool Main_Joueur:: test_position_int(string position){
     return is_int;
 };
 
-int Main_Joueur::test_postion_existed(Carte* carte_en_main[],string position){
+int Main_Joueur::test_postion_existed(Carte* carte_en_main,string position){
     int position_int(0);
     position_int=atoi(position.c_str());
-    while (test_position_int(position) || (position_int<0) || (position_int > 12) || (carte_en_main[position_int])==0 ) {
+    while (test_position_int(position) || (position_int<0) || (position_int > 12) || (&carte_en_main[position_int])==0 ) {
         cout << "Please choose the position in the list : " << endl;
         getline(cin, position);
         int position_int(0);
@@ -47,13 +48,13 @@ int Main_Joueur::test_postion_existed(Carte* carte_en_main[],string position){
     return position_int;
 };
 
-void Main_Joueur::attack_single(Carte* carte_en_main[]){
+void Main_Joueur::attack_single(Carte* carte_en_main){
     print_carte_en_main(carte_en_main);
     cout << "Please choose one position corresponding to the carte to fight : " << endl;
-    string position("14");
+    string position("13");
     getline(cin, position);
     int position_int=test_postion_existed(carte_en_main, position);
-    carte_en_main[position_int]=0;
+    &carte_en_main[position_int]=0;
 };
 
 
