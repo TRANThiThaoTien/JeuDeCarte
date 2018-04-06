@@ -13,6 +13,7 @@
 #include <iostream>
 #include "Main_Joueur.hpp"
 #include "Carte.hpp"
+#include "Utilities.hpp"
 
 using namespace std;
 
@@ -20,20 +21,22 @@ class Joueur {
     
 public:
     
+    Joueur();
+    ~Joueur();
     string get_name();
     void set_name(string name);
     bool get_tour();
     void set_tour(bool tour);
     bool ignore();
-    void attack(Main_Joueur main, Carte* carte_en_main);
-    Main_Joueur get_main_jouer();
-    Main_Joueur set_main_joueur(Main_Joueur main);
+    Type_Attack attack(Main_Joueur main, Carte* carte_en_main, Carte* carte_cible_to_fight, Type_Attack type_cible_attack);
+    Main_Joueur* get_main_jouer();
+    void set_main_joueur(Main_Joueur* main);
     
 protected:
     
     string m_name;
     bool m_tour;
-    Main_Joueur main_joueur;
+    Main_Joueur* main_joueur;
     
 };
 #endif /* Joueur_hpp */

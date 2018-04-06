@@ -8,7 +8,16 @@
 
 #include "Jeu_de_Carte.hpp"
 #include <ctime>
-
+Jeu_de_Carte::Jeu_de_Carte(){
+    m_carte_tab = (Carte *)malloc(52*sizeof(Carte));
+    for (int i(0); i<52; i++) {
+        m_carte_tab[i].set_empty(1);
+    }
+}
+// Pareillement de déstructeur
+Jeu_de_Carte::~Jeu_de_Carte(){
+    
+}
 void Jeu_de_Carte::set_carte(){
     for (int i(0); i<52; i++) {
         if (i%4==0) {
@@ -75,23 +84,22 @@ void Jeu_de_Carte::set_carte(){
 void Jeu_de_Carte:: distribuer_carte(int number_joueur, Carte* carte_to_distribuer){
     Joueur joueur_tab[number_joueur];
     for (int i(0); i<number_joueur; i++) {
-        int j(0);
-        Carte carte_en_main[13];
-        while (j<13) {
+        Carte* carte_en_main = (Carte *)malloc(13*sizeof(Carte));
+        int number_carte_en_main(0);
+        while (number_carte_en_main<13) {
             int position_carte(0);
-            int number_carte_en_main(0);
             srand((int)time(0));
             position_carte = rand()%52+1;
-            if (carte_to_distribuer[position_carte].get_empty() != 0) {
-                carte_en_main[number_carte_en_main]= carte_to_distribuer[position_carte];
-                number_carte_en_main++;
-                carte_to_distribuer[position_carte].set_empty(0);
+            while (carte_to_distribuer[position_carte].get_empty() == 0) {
+                srand((int)time(0));
+                position_carte = rand()%52+1;
             }
+            carte_en_main[number_carte_en_main]= carte_to_distribuer[position_carte];
+            carte_to_distribuer[position_carte].set_empty(0);
+            number_carte_en_main++;
         }
-        Main_Joueur main;
-        main.set_carte_en_main(carte_en_main);
-        //joueur get main
-        joueur_tab[i].set_main_joueur(main);
+        joueur_tab[i].get_main_jouer()->set_carte_en_main(carte_en_main);
+        joueur_tab[i].get_main_jouer()->print_carte_en_main(carte_en_main);
     }
 };
 

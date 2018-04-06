@@ -13,7 +13,8 @@
 
 class Match {
 public:
-    
+    Match();
+    ~Match();
     void set_match(bool match);
     bool get_match();
     void set_tour(int tour);

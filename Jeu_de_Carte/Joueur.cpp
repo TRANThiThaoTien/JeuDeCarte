@@ -13,6 +13,12 @@
 
 
 using namespace std;
+
+Joueur::Joueur(){
+ //   Main_Joueur* main_joueur;
+};
+
+Joueur::~Joueur(){};
 string Joueur::get_name(){
     return m_name;
 };
@@ -26,9 +32,8 @@ void Joueur::set_tour(bool tour){
     m_tour=tour;
 };
 
-Main_Joueur Joueur::set_main_joueur(Main_Joueur main){
-    main_joueur=main;
-    return main_joueur;
+void Joueur::set_main_joueur(Main_Joueur* main){
+    main_joueur = main;
 };
 bool Joueur::ignore(){
     if (m_tour==true) {
@@ -36,22 +41,37 @@ bool Joueur::ignore(){
     }
     return m_tour;
 };
-
-//Déclarer action :  call function attack() in class Main
-void Joueur::attack(Main_Joueur main, Carte* carte_en_main){
-        string number_of_carte(0);
-        cout << "Choose the strategy to attack : " << endl;
-        cout << "Enter the number of carte you want to fight" << endl;
-        getline(cin, number_of_carte);
-        if (number_of_carte=="1") {
-            main.attack_single(carte_en_main);
-        }
-        else if (number_of_carte=="2"){
-            main.attack_double(carte_en_main);
-        }
-        else {
-            main.attack_plural(carte_en_main);
-        }
+Main_Joueur* Joueur::get_main_jouer(){
+    return main_joueur;
 };
 
+//Déclarer action :  call function attack() in class Main
+Type_Attack Joueur::attack(Main_Joueur main, Carte* carte_en_main, Carte* carte_cible_to_fight, Type_Attack type_cible_attack){
+        Type_Attack type_attack;
+        if (type_cible_attack==attack_single) {
+            main.attack_single(carte_en_main, carte_cible_to_fight);
+            type_attack=attack_single;
+        }
+        else if (type_cible_attack==attack_double){
+            main.attack_double(carte_en_main);
+            type_attack=attack_double;
+        }
+        else if (type_cible_attack==attack_plural){
+            //number_of_carte is the number of carte the cible poses
+            main.attack_plural(carte_en_main);
+            type_attack=attack_plural;
+        }
+        else if (type_cible_attack==attack_trois){
+            //number_of_carte is the number of carte the cible poses
+            main.attack_trois(carte_en_main);
+            type_attack=attack_trois;
+        }
+        else if (type_cible_attack==attack_quarte){
+            //number_of_carte is the number of carte the cible poses
+            main.attack_quarte(carte_en_main);
+            type_attack=attack_quarte;
+        }
+    
+    return type_attack;
+};
 
