@@ -50,6 +50,7 @@ ostream& operator<<(ostream& out, const Value_of_Carte value){
 
 int main(int argc, const char * argv[]) {
     Jeu_de_Carte jeu;
+    jeu.set_carte();
 //    for (int i(0); i<52; i++) {
 //        cout << jeu.get_carte()[i].get_value_carte() << "-"<< jeu.get_carte()[i].get_type_carte()<< endl;
 //    }
