@@ -9,6 +9,8 @@
 #include "Carte.hpp"
 
 using namespace std;
+Carte::Carte(){
+}
 Carte::Carte(int empty): m_empty(1){};
 void Carte::set_type_carte(Type_of_Carte type_carte){
     

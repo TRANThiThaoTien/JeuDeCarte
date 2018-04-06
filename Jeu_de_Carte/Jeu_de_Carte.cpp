@@ -13,6 +13,16 @@ Jeu_de_Carte::Jeu_de_Carte(){
     for (int i(0); i<52; i++) {
         m_carte_tab[i].set_empty(1);
     }
+    // O day Vang de y ha,
+    // Cai malloc chi la de allocate, thue mot loc bo nho mémoire, chu khong co keu ham constructeur cho moi cai Carte, nen ban chat no khong co gi het
+    // Minh phai khoi tao manuellement, tuc la phai keu cai constructeur cua Carte manuellement
+    for (int i(0); i<52; i++) {
+        m_carte_tab[i] = Carte();
+    }
+    
+    // Huong tiep can bang malloc la huong tiep can theo C,
+    // Anh de Vang dung vi Vang hieu hieu dung malloc, roi free trong Destructeur, TODO, vang viet destructeur cho moi classe ma trong constructeur co dung malloc ha, roi dung free trong do!
+    // Sau khi Vang hieu roi thi se chuyen sang dung new() va delete(), huong tiep can C++
 }
 // Pareillement de déstructeur
 Jeu_de_Carte::~Jeu_de_Carte(){

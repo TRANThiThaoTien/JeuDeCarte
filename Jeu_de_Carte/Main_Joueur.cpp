@@ -18,6 +18,10 @@ using namespace std;
 Main_Joueur::Main_Joueur(){
     m_carte_en_main = (Carte *)malloc(13*sizeof(Carte));
     m_carte_to_fight =(Carte *)malloc(13*sizeof(Carte));
+    for (int i(0); i< 13; i++) {
+        m_carte_en_main[i] = Carte();
+        m_carte_to_fight[i] = Carte();
+    }
 }
 Main_Joueur::~Main_Joueur(){
     free(m_carte_en_main);
@@ -50,7 +54,7 @@ Carte* Main_Joueur::get_carte_to_fight(){
 void Main_Joueur:: print_carte_en_main(Carte* carte_en_main){
     for (int i(0); i<13; i++) {
         if (carte_en_main[i].get_empty()!=0) {
-            cout<< "position " << i << ":" << carte_en_main[i].get_type_carte() << carte_en_main[i].get_value_carte() << endl;
+            cout<< "position " << i << ":" << carte_en_main[i].get_type_carte() << "-"<<carte_en_main[i].get_value_carte() << endl;
         }
     }
 };

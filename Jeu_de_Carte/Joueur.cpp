@@ -16,8 +16,15 @@ using namespace std;
 
 Joueur::Joueur(){
     main_joueur = (Main_Joueur *)malloc(sizeof(Main_Joueur));
+    // O day Vang de y ha,
+    // Cai malloc chi la de allocate, thue mot loc bo nho mémoire, chu khong co keu ham constructeur cho moi cai Carte, nen ban chat no khong co gi het
+    // Minh phai khoi tao manuellement, tuc la phai keu cai constructeur cua Carte manuellement
+    *main_joueur = Main_Joueur();
     m_name = "Default";
     m_tour = false;
+    // Huong tiep can bang malloc la huong tiep can theo C,
+    // Anh de Vang dung vi Vang hieu hieu dung malloc, roi free trong Destructeur, TODO, vang viet destructeur cho moi classe ma trong constructeur co dung malloc ha, roi dung free trong do!
+    // Sau khi Vang hieu roi thi se chuyen sang dung new() va delete(), huong tiep can C++
 };
 
 Joueur::~Joueur(){};
