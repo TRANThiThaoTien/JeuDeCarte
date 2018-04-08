@@ -18,13 +18,10 @@ using namespace std;
 enum Type_of_Carte {
     Coeur=1,
     Carreau=2,
-    Trèfle=3,
+    Trefle=3,
     Pique=4
-    
-
 };
 enum Value_of_Carte {
-    
     A =11 ,
     Deux =12,
     Trois=0 ,
@@ -38,7 +35,6 @@ enum Value_of_Carte {
     J=8,
     D=9,
     R=10
-
 };
 
 enum Type_Attack {

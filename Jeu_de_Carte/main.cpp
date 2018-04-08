@@ -18,7 +18,7 @@ ostream& operator<<(ostream& out, const Type_of_Carte value){
 #define INSERT_ELEMENT(p) strings[p] = #p
         INSERT_ELEMENT(Coeur);
         INSERT_ELEMENT(Carreau);
-        INSERT_ELEMENT(Trèfle);
+        INSERT_ELEMENT(Trefle);
         INSERT_ELEMENT(Pique);
 #undef INSERT_ELEMENT
     }
@@ -51,13 +51,15 @@ ostream& operator<<(ostream& out, const Value_of_Carte value){
 
 int main(int argc, const char * argv[]) {
     
+    //Match* match = new Match();
+    //int number_joueur = (*match).determine_joueur();
     //Match match;
     //int number_joueur = match.determine_joueur();
     //cout << "number: " << number_joueur<< endl;
     int number_joueur = 4;
     Jeu_de_Carte jeu;
     jeu.set_carte();
-    jeu.distribuer_carte(number_joueur, jeu.get_carte());
+    jeu.distribuer_carte(number_joueur);
     
     return 0;
 }

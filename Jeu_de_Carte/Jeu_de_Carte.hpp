@@ -19,7 +19,7 @@ class Jeu_de_Carte {
 public:
     Jeu_de_Carte();
     ~Jeu_de_Carte();
-    void distribuer_carte(int number_joueur, Carte* carte_to_distribuer);
+    void distribuer_carte(int number_joueur);
     void set_carte();
     Carte* get_carte();
 private:
