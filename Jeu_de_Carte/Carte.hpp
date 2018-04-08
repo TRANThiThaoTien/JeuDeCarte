@@ -25,6 +25,7 @@ public:
     void set_empty(int empty);
     int get_empty();
     Carte(int empty);
+    void copy_from_carte(Carte carte_source);
 private:
     
     Value_of_Carte m_value_carte;

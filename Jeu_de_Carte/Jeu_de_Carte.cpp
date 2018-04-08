@@ -96,6 +96,9 @@ void Jeu_de_Carte:: distribuer_carte(int number_joueur, Carte* carte_to_distribu
     Joueur joueur_tab[number_joueur];
     for (int i(0); i<number_joueur; i++) {
         Carte* carte_en_main = (Carte *)malloc(13*sizeof(Carte));
+        for (int j(0); j< 13; j++){
+            carte_en_main[j] = Carte();
+        }
         int number_carte_en_main(0);
         while (number_carte_en_main<13) {
             int position_carte(0);
@@ -105,11 +108,13 @@ void Jeu_de_Carte:: distribuer_carte(int number_joueur, Carte* carte_to_distribu
                 srand((int)time(0));
                 position_carte = rand()%52+1;
             }
-            carte_en_main[number_carte_en_main]= carte_to_distribuer[position_carte];
+            //carte_en_main[number_carte_en_main]= carte_to_distribuer[position_carte];
+            carte_en_main[number_carte_en_main].copy_from_carte(carte_to_distribuer[position_carte]);
             carte_to_distribuer[position_carte].set_empty(0);
             number_carte_en_main++;
         }
         joueur_tab[i].get_main_jouer()->set_carte_en_main(carte_en_main);
+        cout << "---------------" << endl;
         joueur_tab[i].get_main_jouer()->print_carte_en_main(carte_en_main);
     }
 };

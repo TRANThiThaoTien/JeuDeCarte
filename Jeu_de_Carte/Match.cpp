@@ -37,15 +37,15 @@ int Match::determine_joueur(){
     int number_joueur = atoi(number_joueur_string.c_str());
     return number_joueur;
 };
-void Match::determine_tour(int number_joueur){
-    Joueur* joueur_tab = (Joueur*)malloc(number_joueur*sizeof(Joueur));
-    for (int i(0); i<number_joueur; i++) {
-        if (m_tour%number_joueur==i) {
-            joueur_tab[i].set_tour(true);
-        }
-        if (joueur_tab[i].ignore() || joueur_tab[i].attack(joueur_tab[i].get_main_jouer(), joueur_tab[i].get_main_jouer()->get_carte_to_fight(), joueur_tab[i].get_main_jouer()->get) {
-            <#statements#>
-        }
-    }
-};
+//void Match::determine_tour(int number_joueur){
+//    Joueur* joueur_tab = (Joueur*)malloc(number_joueur*sizeof(Joueur));
+//    for (int i(0); i<number_joueur; i++) {
+//        if (m_tour%number_joueur==i) {
+//            joueur_tab[i].set_tour(true);
+//        }
+////        if (joueur_tab[i].ignore() || joueur_tab[i].attack(joueur_tab[i].get_main_jouer(), joueur_tab[i].get_main_jouer()->get_carte_to_fight(), joueur_tab[i].get_main_jouer()->get) {
+////            <#statements#>
+////        }
+//    }
+//};
 

@@ -51,12 +51,13 @@ ostream& operator<<(ostream& out, const Value_of_Carte value){
 
 int main(int argc, const char * argv[]) {
     
-    Match match;
-    int number_joueur = match.determine_joueur();
-    cout << "number: " << number_joueur<< endl;
-//    Jeu_de_Carte jeu;
-//    jeu.set_carte();
-//    jeu.distribuer_carte(number_joueur, jeu.get_carte());
+    //Match match;
+    //int number_joueur = match.determine_joueur();
+    //cout << "number: " << number_joueur<< endl;
+    int number_joueur = 4;
+    Jeu_de_Carte jeu;
+    jeu.set_carte();
+    jeu.distribuer_carte(number_joueur, jeu.get_carte());
     
     return 0;
 }

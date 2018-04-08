@@ -17,6 +17,11 @@ void Carte::set_type_carte(Type_of_Carte type_carte){
     m_type_carte = type_carte;
     
 };
+void Carte::copy_from_carte(Carte carte_source){
+    this->m_type_carte = carte_source.m_type_carte;
+    this->m_value_carte = carte_source.m_value_carte;
+    this->m_empty = carte_source.m_empty;
+};
 
 Type_of_Carte Carte:: get_type_carte(){
     return m_type_carte;
