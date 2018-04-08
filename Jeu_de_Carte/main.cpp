@@ -8,15 +8,58 @@
 
 #include <iostream>
 #include "Jeu_de_Carte.hpp"
+#include "Match.hpp"
 
 using namespace std;
+//
+ostream& operator<<(ostream& out, const Type_of_Carte value){
+    static map<Type_of_Carte, string> strings;
+    if (strings.size() == 0){
+#define INSERT_ELEMENT(p) strings[p] = #p
+        INSERT_ELEMENT(Coeur);
+        INSERT_ELEMENT(Carreau);
+        INSERT_ELEMENT(Trefle);
+        INSERT_ELEMENT(Pique);
+#undef INSERT_ELEMENT
+    }
+
+    return out << strings[value];
+}
+ostream& operator<<(ostream& out, const Value_of_Carte value){
+    static map<Value_of_Carte, string> strings;
+    if (strings.size() == 0){
+#define INSERT_ELEMENT(p) strings[p] = #p
+        INSERT_ELEMENT(A);
+        INSERT_ELEMENT(Deux);
+        INSERT_ELEMENT(Trois);
+        INSERT_ELEMENT(Quatre);
+        INSERT_ELEMENT(Cinque);
+        INSERT_ELEMENT(Six);
+        INSERT_ELEMENT(Sept);
+        INSERT_ELEMENT(Huit);
+        INSERT_ELEMENT(Neuf);
+        INSERT_ELEMENT(Dix);
+        INSERT_ELEMENT(J);
+        INSERT_ELEMENT(D);
+        INSERT_ELEMENT(R);
+#undef INSERT_ELEMENT
+    }
+    
+    return out << strings[value];
+}
+
 
 int main(int argc, const char * argv[]) {
+    
+    //Match* match = new Match();
+    //int number_joueur = (*match).determine_joueur();
+    //Match match;
+    //int number_joueur = match.determine_joueur();
+    //cout << "number: " << number_joueur<< endl;
+    int number_joueur = 4;
     Jeu_de_Carte jeu;
     jeu.set_carte();
-    for (int i(0); i<52; i++) {
-        cout << jeu.m_carte_tab[i].get_value_carte() << " "<< jeu.m_carte_tab[i].get_type_carte()<< endl;
-    }
+    jeu.distribuer_carte(number_joueur);
     
     return 0;
 }

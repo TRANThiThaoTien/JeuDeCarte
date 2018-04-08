@@ -10,15 +10,19 @@
 
 using namespace std;
 
-Carte::Carte(Type_of_Carte carte_type, Value_of_Carte carte_value): m_type_carte(carte_type), m_value_carte(carte_value){
-}
-Carte::~Carte(){
-    
-}
+Carte::Carte(Value_of_Carte value_carte, Type_of_Carte type_carte, int empty): m_value_carte(value_carte), m_type_carte(type_carte), m_empty(empty){
+};
+Carte::Carte(Carte& r_carte_source): m_value_carte(r_carte_source.m_value_carte), m_type_carte(r_carte_source.m_type_carte), m_empty(r_carte_source.m_empty){
+};
 void Carte::set_type_carte(Type_of_Carte type_carte){
     
     m_type_carte = type_carte;
     
+};
+void Carte::copy_from_carte(Carte carte_source){
+    this->m_type_carte = carte_source.m_type_carte;
+    this->m_value_carte = carte_source.m_value_carte;
+    this->m_empty = carte_source.m_empty;
 };
 
 Type_of_Carte Carte:: get_type_carte(){
@@ -32,5 +36,12 @@ Value_of_Carte Carte::get_value_carte(){
 void Carte::set_value_carte(Value_of_Carte value_carte){
     m_value_carte= value_carte;
 };
+void Carte::set_empty(int empty){
+    m_empty=empty;
+};
+int Carte::get_empty(){
+    return m_empty;
+};
+
 
 
