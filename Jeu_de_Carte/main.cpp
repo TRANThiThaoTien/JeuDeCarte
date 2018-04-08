@@ -48,19 +48,37 @@ ostream& operator<<(ostream& out, const Value_of_Carte value){
     return out << strings[value];
 }
 
-
 int main(int argc, const char * argv[]) {
-    
-    //Match* match = new Match();
-    //int number_joueur = (*match).determine_joueur();
-    //Match match;
-    //int number_joueur = match.determine_joueur();
-    //cout << "number: " << number_joueur<< endl;
-    int number_joueur = 4;
-    Jeu_de_Carte jeu;
-    jeu.set_carte();
-    jeu.distribuer_carte(number_joueur);
-    
+	// Begin
+	cout << "Bienvenue à Jeu De Carte TIENLEN Vietnam !" << endl;
+	cout << "Hey, tu t'appelles comment? " << endl;
+	string nom_de_joeur("");
+	cin >> nom_de_joeur ;
+	int nombre_de_joeurs_virtuels(0);
+	cout << "Ok, " << nom_de_joeur << ", Tu veux combien de joueur avec toi, souviens-toi que tu auras maximum 3 jolies joueurs !" << endl;
+	cin >> nombre_de_joeurs_virtuels;
+	while (!cin || nombre_de_joeurs_virtuels < 1 ||  nombre_de_joeurs_virtuels >3 ){
+		// user didn't input a number
+		cin.clear(); // reset failbit
+		cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); //skip bad input
+		cout << "T'es sur que tu as remplis un chiffre de 1 à 3, :D, essayes encore une fois " << endl;
+		cin >> nombre_de_joeurs_virtuels;
+	}
+	cout << "Ok, " << nom_de_joeur << ", Tu as bien "<< nombre_de_joeurs_virtuels << " jolie joueurs avec toi! " << endl;
+	Match match = Match(nombre_de_joeurs_virtuels);
+	cout << "Ok, " << nom_de_joeur << ", T'es prêt pour recevoir les carte, vois-ci tes carte, 13 cartes ! " << endl;
+	Match
+//
+//    Match* match = new Match();
+//    int number_joueur = (*match).determine_joueur();
+//    Match match;
+//    int number_joueur = match.determine_joueur();
+//    cout << "number: " << number_joueur<< endl;
+//    int number_joueur = 4;
+//    Jeu_de_Carte jeu;
+//    jeu.set_carte();
+//    jeu.distribuer_carte(number_joueur);
+	
     return 0;
 }
 
