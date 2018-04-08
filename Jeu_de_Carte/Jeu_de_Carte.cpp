@@ -26,7 +26,8 @@ Jeu_de_Carte::Jeu_de_Carte(){
 }
 // Pareillement de déstructeur
 Jeu_de_Carte::~Jeu_de_Carte(){
-    
+    //free(m_carte_tab);
+    //m_carte_tab=NULL;
 }
 void Jeu_de_Carte::set_carte(){
     for (int i(0); i<52; i++) {

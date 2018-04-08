@@ -35,6 +35,7 @@ public:
     bool test_carte_cible(Carte carte_cible, Carte carte_joueur);
     void set_carte_empty(Carte* carte_en_main, int* position_tab);
     bool test_coueur(Carte carte_first, Carte carte_second);
+    void set_carte_to_carte_to_fight(Carte* carte_en_main, int position_tab[], Carte* carte_to_fight, int number_carte);
 
 private:
     

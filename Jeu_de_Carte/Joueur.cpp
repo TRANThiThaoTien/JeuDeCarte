@@ -27,7 +27,10 @@ Joueur::Joueur(){
     // Sau khi Vang hieu roi thi se chuyen sang dung new() va delete(), huong tiep can C++
 };
 
-Joueur::~Joueur(){};
+Joueur::~Joueur(){
+    free(main_joueur);
+    main_joueur=NULL;
+};
 string Joueur::get_name(){
     return m_name;
 };
@@ -53,31 +56,38 @@ bool Joueur::ignore(){
 Main_Joueur* Joueur::get_main_jouer(){
     return main_joueur;
 };
+void Joueur::set_winner(bool is_winner){
+    m_is_winner=is_winner;
+};
+bool Joueur::get_winner(){
+    return m_is_winner;
+};
+
 
 //Déclarer action :  call function attack() in class Main
-Type_Attack Joueur::attack(Main_Joueur main, Carte* carte_en_main, Carte* carte_cible_to_fight, Type_Attack type_cible_attack, Carte* carte_to_fight){
+Type_Attack Joueur::attack(Main_Joueur main, Carte* carte_cible_to_fight, Type_Attack type_cible_attack){
         Type_Attack type_attack(attack_single);
         if (type_cible_attack==attack_single) {
-            main.attack_single(carte_en_main, carte_cible_to_fight, carte_to_fight);
+            main.attack_single(main.get_carte_en_main(), carte_cible_to_fight, main.get_carte_to_fight());
             type_attack=attack_single;
         }
         else if (type_cible_attack==attack_double){
-            main.attack_double(carte_en_main, carte_cible_to_fight, carte_to_fight);
+            main.attack_double(main.get_carte_en_main(), carte_cible_to_fight, main.get_carte_to_fight());
             type_attack=attack_double;
         }
         else if (type_cible_attack==attack_plural){
             //number_of_carte is the number of carte the cible poses
-            main.attack_plural(carte_en_main, carte_cible_to_fight, carte_to_fight);
+            main.attack_plural(main.get_carte_en_main(), carte_cible_to_fight, main.get_carte_to_fight());
             type_attack=attack_plural;
         }
         else if (type_cible_attack==attack_trois){
             //number_of_carte is the number of carte the cible poses
-            main.attack_trois(carte_en_main, carte_cible_to_fight, carte_to_fight);
+            main.attack_trois(main.get_carte_en_main(), carte_cible_to_fight, main.get_carte_to_fight());
             type_attack=attack_trois;
         }
         else if (type_cible_attack==attack_quarte){
             //number_of_carte is the number of carte the cible poses
-            main.attack_quarte(carte_en_main, carte_cible_to_fight, carte_to_fight);
+            main.attack_quarte(main.get_carte_en_main(), carte_cible_to_fight, main.get_carte_to_fight());
             type_attack=attack_quarte;
         }
     

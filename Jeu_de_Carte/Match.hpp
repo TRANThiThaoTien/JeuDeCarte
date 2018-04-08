@@ -10,6 +10,7 @@
 #define Match_hpp
 
 #include <stdio.h>
+#include "Joueur.hpp"
 
 class Match {
 public:
@@ -19,11 +20,14 @@ public:
     bool get_match();
     void set_tour(int tour);
     int get_tour();
-    
+    int determine_joueur();
+    void determine_tour(int number_joueur);
 private:
     
     bool m_is_over;
     int m_tour;
 };
+
+
 
 #endif /* Match_hpp */
