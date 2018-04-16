@@ -28,7 +28,7 @@ public:
     bool get_tour();
     void set_tour(bool tour);
     bool ignore();
-    Type_Attack attack(Main_Joueur main, Carte* carte_cible_to_fight, Type_Attack type_cible_attack);
+    Type_Attack attack(Main_Joueur main, Type_Attack type_cible_attack);
     Main_Joueur* get_main_jouer();
     void set_main_joueur(Main_Joueur* main);
     void set_winner(bool is_winner);

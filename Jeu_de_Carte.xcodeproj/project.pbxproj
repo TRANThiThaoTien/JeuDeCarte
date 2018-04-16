@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		EB4B7553206F8AEA002895E2 /* Joueur_physic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB4B7551206F8AEA002895E2 /* Joueur_physic.cpp */; };
 		EB4B7556206F8B01002895E2 /* Joueur_virtuel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB4B7554206F8B01002895E2 /* Joueur_virtuel.cpp */; };
+		EB4B75592080D679002895E2 /* Carte_cible.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB4B75572080D679002895E2 /* Carte_cible.cpp */; };
 		EB68115A206A844C00AF0AEF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB681159206A844C00AF0AEF /* main.cpp */; };
 		EB681162206A84A800AF0AEF /* Joueur.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB681160206A84A800AF0AEF /* Joueur.cpp */; };
 		EB681165206A84BF00AF0AEF /* Carte.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB681163206A84BF00AF0AEF /* Carte.cpp */; };
@@ -34,6 +35,8 @@
 		EB4B7552206F8AEA002895E2 /* Joueur_physic.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Joueur_physic.hpp; sourceTree = "<group>"; };
 		EB4B7554206F8B01002895E2 /* Joueur_virtuel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Joueur_virtuel.cpp; sourceTree = "<group>"; };
 		EB4B7555206F8B01002895E2 /* Joueur_virtuel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Joueur_virtuel.hpp; sourceTree = "<group>"; };
+		EB4B75572080D679002895E2 /* Carte_cible.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Carte_cible.cpp; sourceTree = "<group>"; };
+		EB4B75582080D679002895E2 /* Carte_cible.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Carte_cible.hpp; sourceTree = "<group>"; };
 		EB681156206A844C00AF0AEF /* Jeu_de_Carte */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Jeu_de_Carte; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB681159206A844C00AF0AEF /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		EB681160206A84A800AF0AEF /* Joueur.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Joueur.cpp; sourceTree = "<group>"; };
@@ -86,6 +89,8 @@
 				EB4B7551206F8AEA002895E2 /* Joueur_physic.cpp */,
 				EB681161206A84A800AF0AEF /* Joueur.hpp */,
 				EB681160206A84A800AF0AEF /* Joueur.cpp */,
+				EB4B75572080D679002895E2 /* Carte_cible.cpp */,
+				EB4B75582080D679002895E2 /* Carte_cible.hpp */,
 				EBCEFAAB206E651300AFB75B /* Jeu_de_Carte.hpp */,
 				EBCEFAAA206E651300AFB75B /* Jeu_de_Carte.cpp */,
 				EBCEFAAE206E725700AFB75B /* Match.hpp */,
@@ -156,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB4B75592080D679002895E2 /* Carte_cible.cpp in Sources */,
 				EB68115A206A844C00AF0AEF /* main.cpp in Sources */,
 				EBCEFAAF206E725700AFB75B /* Match.cpp in Sources */,
 				EBCEFAB2206E83BD00AFB75B /* Main_Joueur.cpp in Sources */,

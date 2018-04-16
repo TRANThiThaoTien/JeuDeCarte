@@ -14,8 +14,6 @@
 #include "Joueur.hpp"
 
 class Joueur_physic : public Joueur{
-public:
-    //Type_Attack attack(Main_Joueur main, Carte* carte_en_main, Carte* carte_cible_to_fight, Type_Attack type_cible_attack);
 };
 
 #endif /* Joueur_physic_hpp */

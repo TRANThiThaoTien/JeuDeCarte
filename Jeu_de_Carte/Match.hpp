@@ -11,6 +11,9 @@
 
 #include <stdio.h>
 #include "Joueur.hpp"
+#include "Joueur_physic.hpp"
+#include "Joueur_virtuel.hpp"
+
 
 class Match {
 public:
@@ -20,12 +23,18 @@ public:
     bool get_match();
     void set_tour(int tour);
     int get_tour();
-    int determine_joueur();
-    void determine_tour(int number_joueur);
+    void determine_joueur();
+    void determine_tour(int number_joueur, Carte_cible carte_cible);
+    int get_nombre_joueur();
+    bool test_int(string number_string);
+
+    
 private:
     
     bool m_is_over;
     int m_tour;
+    Joueur* m_joueur_tab;
+    int m_nombre_joueur;
 };
 
 

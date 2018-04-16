@@ -210,29 +210,52 @@ void Jeu_de_Carte::set_carte(){
     }
 
 };
+//void Jeu_de_Carte:: distribuer_carte(int number_joueur){
+//    Joueur joueur_tab[number_joueur]; 
+//     for (int i(0); i<number_joueur; i++) {
+//        Carte* carte_en_main = (Carte *)malloc(13*sizeof(Carte));
+//        int number_carte_en_main(0);
+//        while (number_carte_en_main<13) {
+//            int position_carte(0);
+//            srand((int)time(0));
+//            position_carte = rand()%52;
+//            while (m_carte_tab[position_carte].get_empty() == 0) {
+//                srand((int)time(0));
+//                position_carte = rand()%52;
+//            }
+//            //carte_en_main[number_carte_en_main]= carte_to_distribuer[position_carte];
+//            carte_en_main[number_carte_en_main] = Carte(m_carte_tab[position_carte]);
+//            m_carte_tab[position_carte].set_empty(0);
+//            number_carte_en_main++;
+//        }
+//        joueur_tab[i].get_main_jouer()->set_carte_en_main(carte_en_main);
+//        cout << "---------------" << endl;
+//        joueur_tab[i].get_main_jouer()->print_carte_en_main();
+//    }
+//};
 void Jeu_de_Carte:: distribuer_carte(int number_joueur){
-    Joueur joueur_tab[number_joueur]; 
-     for (int i(0); i<number_joueur; i++) {
+    Joueur joueur_tab[number_joueur];
+    int position_max(51);
+    int number_carte_rest(52);
+    for (int i(0); i<number_joueur; i++) {
         Carte* carte_en_main = (Carte *)malloc(13*sizeof(Carte));
         int number_carte_en_main(0);
         while (number_carte_en_main<13) {
             int position_carte(0);
             srand((int)time(0));
-            position_carte = rand()%52;
-            while (m_carte_tab[position_carte].get_empty() == 0) {
-                srand((int)time(0));
-                position_carte = rand()%52;
-            }
-            //carte_en_main[number_carte_en_main]= carte_to_distribuer[position_carte];
+            position_carte = rand()%number_carte_rest;
             carte_en_main[number_carte_en_main] = Carte(m_carte_tab[position_carte]);
-            m_carte_tab[position_carte].set_empty(0);
+            m_carte_tab[position_carte] = m_carte_tab[position_max];
+            position_max--;
             number_carte_en_main++;
+            number_carte_rest--;
         }
         joueur_tab[i].get_main_jouer()->set_carte_en_main(carte_en_main);
         cout << "---------------" << endl;
-        joueur_tab[i].get_main_jouer()->print_carte_en_main(carte_en_main);
+        joueur_tab[i].get_main_jouer()->print_carte_en_main();
     }
 };
+
 //How to book function get_carte
 Carte* Jeu_de_Carte::get_carte(){
     return m_carte_tab;
