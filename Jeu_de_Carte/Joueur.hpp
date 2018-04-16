@@ -13,7 +13,7 @@
 #include <iostream>
 #include "Main_Joueur.hpp"
 #include "Carte.hpp"
-#include "Utilities.hpp"
+#include "Carte_cible.hpp"
 
 using namespace std;
 
@@ -28,17 +28,19 @@ public:
     bool get_tour();
     void set_tour(bool tour);
     bool ignore();
-    Type_Attack attack(Main_Joueur main, Type_Attack type_cible_attack);
+    Type_Attack attack(Carte_cible cible);
     Main_Joueur* get_main_jouer();
     void set_main_joueur(Main_Joueur* main);
     void set_winner(bool is_winner);
     bool get_winner();
+    bool is_finish();
     
 protected:
     
     string m_name;
+    bool m_is_finish;
     bool m_tour;
-    Main_Joueur* main_joueur;
+    Main_Joueur* m_main_joueur;
     bool m_is_winner;
 };
 #endif /* Joueur_hpp */

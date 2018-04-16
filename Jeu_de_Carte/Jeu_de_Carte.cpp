@@ -233,11 +233,10 @@ void Jeu_de_Carte::set_carte(){
 //        joueur_tab[i].get_main_jouer()->print_carte_en_main();
 //    }
 //};
-void Jeu_de_Carte:: distribuer_carte(int number_joueur){
-    Joueur joueur_tab[number_joueur];
+void Jeu_de_Carte:: distribute(Match* match){
     int position_max(51);
     int number_carte_rest(52);
-    for (int i(0); i<number_joueur; i++) {
+    for (int i(0); i<match->get_nombre_joueur(); i++) {
         Carte* carte_en_main = (Carte *)malloc(13*sizeof(Carte));
         int number_carte_en_main(0);
         while (number_carte_en_main<13) {
@@ -250,9 +249,9 @@ void Jeu_de_Carte:: distribuer_carte(int number_joueur){
             number_carte_en_main++;
             number_carte_rest--;
         }
-        joueur_tab[i].get_main_jouer()->set_carte_en_main(carte_en_main);
+        (match->get_joueur_tab())[i].get_main_jouer()->set_carte_en_main(carte_en_main);
         cout << "---------------" << endl;
-        joueur_tab[i].get_main_jouer()->print_carte_en_main();
+        match->get_joueur_tab()[i].get_main_jouer()->print_carte_en_main();
     }
 };
 

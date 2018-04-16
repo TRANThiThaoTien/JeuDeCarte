@@ -16,10 +16,10 @@
 using namespace std;
 
 enum Type_of_Carte {
-    Coeur=1,
+    Coeur=3,
     Carreau=2,
-    Trefle=3,
-    Pique=4
+    Trefle=1,
+    Pique=0
 };
 enum Value_of_Carte {
     A =11 ,

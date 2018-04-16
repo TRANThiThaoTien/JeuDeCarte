@@ -52,11 +52,15 @@ ostream& operator<<(ostream& out, const Value_of_Carte value){
 int main(int argc, const char * argv[]) {
     
     Match match;
-    match.determine_joueur(); 
-    int number_joueur = match.get_nombre_joueur();
-    Jeu_de_Carte jeu;
-    jeu.set_carte();
-    jeu.distribuer_carte(number_joueur);
+    match.initialize();
+    Jeu_de_Carte carte_block;
+    carte_block.set_carte();
+    carte_block.distribute(&match);
+    //while (!match.verify_is_over()) {
+        match.find_smallest_carte();
+        match.set_tour(match.get_tour() + 1);
+    //}
+
     
     
     return 0;

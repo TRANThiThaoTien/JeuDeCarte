@@ -16,11 +16,12 @@ class Carte_cible : public Carte{
 public:
     Carte_cible();
     ~Carte_cible();
-    Carte* get_carte_cible();
-    void set_carte_cible(Carte* carte_cible);
+    Carte_cible* get_carte_cible();
+    void set_carte_cible(Carte_cible* carte_cible);
     Type_Attack get_type_attack();
+    void set_type_attack(Type_Attack type_attack);
 private:
-    Carte* m_cible_to_figth;
+    Carte_cible* m_cible_to_figth;
     Type_Attack m_type_attack;
 };
 

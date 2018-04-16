@@ -48,8 +48,11 @@ bool Match::test_int(string number_string){
     }
     return is_int;
 };
+Joueur* Match::get_joueur_tab(){
+    return m_joueur_tab;
+};
 
-void Match::determine_joueur(){
+void Match::initialize(){
     string number_joueur_string("");
     cout << "Please choose the number of player : " << endl;
     getline(cin, number_joueur_string);
@@ -61,14 +64,44 @@ void Match::determine_joueur(){
     m_joueur_tab = (Joueur *)malloc(m_nombre_joueur * sizeof(Joueur));
     for (int i(0); i < m_nombre_joueur; i++) {
         if (i==0) {
-            m_joueur_tab[0] = Joueur_physic();
+            m_joueur_tab[0] = Joueur();
             cout << "Enter your name" << endl;
             string name_joueur_physic("");
             getline(cin, name_joueur_physic);
             m_joueur_tab[0].set_name(name_joueur_physic);
         }
         else{
-            m_joueur_tab[i] = Joueur_virtuel();
+            m_joueur_tab[i] = Joueur();
+        }
+    }
+};
+bool Match::verify_is_over(){
+    int number_finish(0);
+    for (int i(0); i<m_nombre_joueur; i++) {
+        if (m_joueur_tab[i].is_finish() == true) {
+            number_finish++;
+        }
+    }
+    if (number_finish >= (m_nombre_joueur-1)) {
+        m_is_over = true;
+    }
+    return m_is_over;
+};
+void Match::find_smallest_carte(){
+    bool b_is_found(0);
+    for (int i(0); i < m_nombre_joueur; i++) {
+        cout << i << endl;
+        for (int j(0); j < 13; j++) {
+            cout << j << endl;
+            if (m_joueur_tab[i].get_main_jouer()->get_carte_en_main()[j].get_value_carte() == Trois && m_joueur_tab[i].get_main_jouer()->get_carte_en_main()[j].get_type_carte() == Pique) {
+                b_is_found = true;
+                m_tour = i;
+                cout << "tour :" <<m_tour << endl;
+                break;
+            }
+        }
+        if (b_is_found) {
+            break;
         }
     }
 };

@@ -15,12 +15,16 @@
 using namespace std;
 
 Joueur::Joueur(){
-    main_joueur = new Main_Joueur();
+    m_main_joueur = new Main_Joueur();
+    m_name = "";
+    m_tour = false;
+    m_is_winner = false;
+    m_is_finish = false;
 };
 
 Joueur::~Joueur(){
-    free(main_joueur);
-    main_joueur=NULL;
+    free(m_main_joueur);
+    m_main_joueur=NULL;
 };
 string Joueur::get_name(){
     return m_name;
@@ -36,7 +40,7 @@ void Joueur::set_tour(bool tour){
 };
 
 void Joueur::set_main_joueur(Main_Joueur* main){
-    main_joueur = main;
+    m_main_joueur = main;
 };
 bool Joueur::ignore(){
     if (m_tour==true) {
@@ -45,7 +49,7 @@ bool Joueur::ignore(){
     return m_tour;
 };
 Main_Joueur* Joueur::get_main_jouer(){
-    return main_joueur;
+    return m_main_joueur;
 };
 void Joueur::set_winner(bool is_winner){
     m_is_winner=is_winner;
@@ -53,33 +57,41 @@ void Joueur::set_winner(bool is_winner){
 bool Joueur::get_winner(){
     return m_is_winner;
 };
-
+bool Joueur::is_finish(){
+    int number_verified(0);
+    for (int i(0); i < 13; i++) {
+        if (m_main_joueur->get_carte_en_main()[i].get_empty() == 0) {
+            number_verified++;
+        }
+    }
+    if (number_verified == 13) {
+        m_is_finish = true;
+    }
+    return m_is_finish;
+};
 
 //Déclarer action :  call function attack() in class Main
-Type_Attack Joueur::attack(Main_Joueur main, Type_Attack type_cible_attack){
+Type_Attack Joueur::attack(Carte_cible cible){
         Type_Attack type_attack(attack_single);
-        if (type_cible_attack==attack_single) {
-            //main.attack_single(main.get_carte_en_main(), main.get_carte_to_fight());
-            type_attack=attack_single;
+        if (cible.get_type_attack()==attack_single) {
+            m_main_joueur->attack_single(*cible.get_carte_cible());
+            cible.set_type_attack(attack_single);
         }
-        else if (type_cible_attack==attack_double){
-            //main.attack_double(main.get_carte_en_main(), main.get_carte_to_fight());
-            type_attack=attack_double;
+        else if (cible.get_type_attack()==attack_double){
+            m_main_joueur->attack_double(*cible.get_carte_cible());
+            cible.set_type_attack(attack_double);
         }
-        else if (type_cible_attack==attack_plural){
-            //number_of_carte is the number of carte the cible poses
-            //main.attack_plural(main.get_carte_en_main(), main.get_carte_to_fight());
-            type_attack=attack_plural;
+        else if (cible.get_type_attack()==attack_plural){
+            m_main_joueur->attack_plural(*cible.get_carte_cible());
+            cible.set_type_attack(attack_plural);
         }
-        else if (type_cible_attack==attack_trois){
-            //number_of_carte is the number of carte the cible poses
-            //main.attack_trois(main.get_carte_en_main(), main.get_carte_to_fight());
-            type_attack=attack_trois;
+        else if (cible.get_type_attack()==attack_trois){
+            m_main_joueur->attack_trois(*cible.get_carte_cible());
+            cible.set_type_attack(attack_trois);
         }
-        else if (type_cible_attack==attack_quarte){
-            //number_of_carte is the number of carte the cible poses
-            //main.attack_quarte(main.get_carte_en_main(), main.get_carte_to_fight());
-            type_attack=attack_quarte;
+        else if (cible.get_type_attack()==attack_quarte){
+            m_main_joueur->attack_quarte(*cible.get_carte_cible());
+            cible.set_type_attack(attack_quarte);
         }
     
     return type_attack;

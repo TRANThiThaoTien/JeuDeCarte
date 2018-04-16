@@ -12,14 +12,13 @@
 #include <stdio.h>
 #include "Carte.hpp"
 #include <iostream>
-#include "Joueur.hpp"
-#include "Main_Joueur.hpp"
+#include "Match.hpp"
 
 class Jeu_de_Carte {
 public:
     Jeu_de_Carte();
     ~Jeu_de_Carte();
-    void distribuer_carte(int number_joueur);
+    void distribute(Match* match);
     void set_carte();
     Carte* get_carte();
 private:

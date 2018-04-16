@@ -16,7 +16,7 @@
 using namespace std;
 
 Main_Joueur::Main_Joueur(){
-    m_carte_en_main = (Carte *)malloc(13*sizeof(Carte));
+    m_carte_en_main = NULL;
 }
 Main_Joueur::~Main_Joueur(){
     free(m_carte_en_main);
@@ -28,12 +28,14 @@ void Main_Joueur::set_carte_empty(int* position_tab ){
     }
 };
 void Main_Joueur:: set_carte_en_main(Carte* carte_en_main){
-    for (int i(0); i<13; i++) {
+    
+//    for (int i(0); i<13; i++) {
 //        m_carte_en_main[i].set_type_carte(carte_en_main[i].get_type_carte());
 //        m_carte_en_main[i].set_value_carte(carte_en_main[i].get_value_carte());
 //        m_carte_en_main[i].set_empty(1);
-        m_carte_en_main[i] = Carte(carte_en_main[i]);
-    }
+//        m_carte_en_main[i] = Carte(carte_en_main[i]);
+//    }
+    m_carte_en_main = carte_en_main;
 }
 Carte* Main_Joueur::get_carte_en_main(){
     return m_carte_en_main;

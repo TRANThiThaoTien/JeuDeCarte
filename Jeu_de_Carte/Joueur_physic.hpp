@@ -14,6 +14,7 @@
 #include "Joueur.hpp"
 
 class Joueur_physic : public Joueur{
+public:
 };
 
 #endif /* Joueur_physic_hpp */

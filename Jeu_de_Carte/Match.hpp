@@ -23,11 +23,13 @@ public:
     bool get_match();
     void set_tour(int tour);
     int get_tour();
-    void determine_joueur();
+    Joueur* get_joueur_tab();
+    void initialize();
     void determine_tour(int number_joueur, Carte_cible carte_cible);
     int get_nombre_joueur();
     bool test_int(string number_string);
-
+    bool verify_is_over();
+    void find_smallest_carte();
     
 private:
     
