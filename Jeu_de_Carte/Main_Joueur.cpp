@@ -19,8 +19,10 @@ Main_Joueur::Main_Joueur(){
     m_carte_en_main = NULL;
 }
 Main_Joueur::~Main_Joueur(){
-    free(m_carte_en_main);
-    m_carte_en_main = NULL;
+	if (!m_carte_en_main) {
+		delete [] m_carte_en_main;
+		m_carte_en_main = NULL;
+	}
 }
 void Main_Joueur::set_carte_empty(int* position_tab ){
     for (int i(0); i<sizeof(*position_tab/sizeof(position_tab[0])); i++) {

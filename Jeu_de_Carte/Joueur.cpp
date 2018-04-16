@@ -23,8 +23,9 @@ Joueur::Joueur(){
 };
 
 Joueur::~Joueur(){
-    free(m_main_joueur);
-    m_main_joueur=NULL;
+	if (!m_main_joueur) {
+		delete m_main_joueur;
+	}
 };
 string Joueur::get_name(){
     return m_name;

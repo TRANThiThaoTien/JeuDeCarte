@@ -9,7 +9,9 @@
 #include "Carte.hpp"
 
 using namespace std;
-
+Carte::Carte(){
+	
+};
 Carte::Carte(Value_of_Carte value_carte, Type_of_Carte type_carte, int empty): m_value_carte(value_carte), m_type_carte(type_carte), m_empty(empty){
 };
 Carte::Carte(Carte& r_carte_source): m_value_carte(r_carte_source.m_value_carte), m_type_carte(r_carte_source.m_type_carte), m_empty(r_carte_source.m_empty){

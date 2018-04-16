@@ -9,12 +9,13 @@
 #include "Jeu_de_Carte.hpp"
 #include <ctime>
 Jeu_de_Carte::Jeu_de_Carte(){
-    m_carte_tab = (Carte *)malloc(52*sizeof(Carte));
+	m_carte_tab = new Carte[52];
 }
 // Pareillement de déstructeur
 Jeu_de_Carte::~Jeu_de_Carte(){
-    //free(m_carte_tab);
-    //m_carte_tab=NULL;
+	if (!m_carte_tab) {
+		delete[] m_carte_tab;
+	}
 }
 void Jeu_de_Carte::set_carte(){
     Type_of_Carte type_carte(Coeur);
@@ -237,7 +238,8 @@ void Jeu_de_Carte:: distribute(Match* match){
     int position_max(51);
     int number_carte_rest(52);
     for (int i(0); i<match->get_nombre_joueur(); i++) {
-        Carte* carte_en_main = (Carte *)malloc(13*sizeof(Carte));
+        // Carte* carte_en_main = (Carte *)malloc(13*sizeof(Carte));
+			Carte* carte_en_main = new Carte[13];
         int number_carte_en_main(0);
         while (number_carte_en_main<13) {
             int position_carte(0);

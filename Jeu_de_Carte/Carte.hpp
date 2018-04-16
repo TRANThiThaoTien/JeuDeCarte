@@ -17,6 +17,7 @@ class Carte {
     
 public:
     //O day anh chi them cai Constructeur cua Carte, ma ko can lam gi them
+	Carte();
     Carte(Value_of_Carte value_carte, Type_of_Carte type_cart, int empty);
     Carte(Carte& r_carte_source);
     Value_of_Carte get_value_carte();
