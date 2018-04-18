@@ -14,15 +14,15 @@
 
 using namespace std;
 
-Carte_cible::Carte_cible() : Carte(Deux, Pique, 1){
+Carte_cible::Carte_cible(){
     m_cible_to_figth = NULL;
     m_type_attack = attack_single;
 };
 Carte_cible::~Carte_cible(){};
-Carte_cible* Carte_cible::get_carte_cible(){
+Carte* Carte_cible::get_carte_cible(){
     return m_cible_to_figth;
 };
-void Carte_cible::set_carte_cible(Carte_cible* carte_cible){
+void Carte_cible::set_carte_cible(Carte* carte_cible){
     m_cible_to_figth = carte_cible;
 };
 Type_Attack Carte_cible::get_type_attack(){

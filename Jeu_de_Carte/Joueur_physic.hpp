@@ -15,6 +15,7 @@
 
 class Joueur_physic : public Joueur{
 public:
+    Type_Attack attack(Carte_cible cible);
 };
 
 #endif /* Joueur_physic_hpp */

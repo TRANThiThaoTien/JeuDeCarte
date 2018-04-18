@@ -14,14 +14,14 @@ Carte::Carte(){
 };
 Carte::Carte(Value_of_Carte value_carte, Type_of_Carte type_carte, int empty): m_value_carte(value_carte), m_type_carte(type_carte), m_empty(empty){
 };
-Carte::Carte(Carte& r_carte_source): m_value_carte(r_carte_source.m_value_carte), m_type_carte(r_carte_source.m_type_carte), m_empty(r_carte_source.m_empty){
+Carte::Carte(Carte const& r_carte_source): m_value_carte(r_carte_source.m_value_carte), m_type_carte(r_carte_source.m_type_carte), m_empty(r_carte_source.m_empty){
 };
 void Carte::set_type_carte(Type_of_Carte type_carte){
     
     m_type_carte = type_carte;
     
 };
-void Carte::copy_from_carte(Carte carte_source){
+void Carte::copy_from_carte(Carte const& carte_source){
     this->m_type_carte = carte_source.m_type_carte;
     this->m_value_carte = carte_source.m_value_carte;
     this->m_empty = carte_source.m_empty;

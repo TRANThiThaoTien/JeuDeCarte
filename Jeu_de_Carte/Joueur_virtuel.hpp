@@ -14,8 +14,9 @@
 #include "Joueur.hpp"
 
 class Joueur_virtuel : public Joueur{
-
-
+public:
+    Type_Attack attack(Carte_cible cible);
+    void determine_to_fight_or_not(Carte_cible* cible);
 };
 
 #endif /* Joueur_virtuel_hpp */

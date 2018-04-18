@@ -87,19 +87,19 @@ void Main_Joueur::set_carte_to_carte_to_fight(int position_tab[], Carte* carte_t
         carte_to_fight[i] = m_carte_en_main[position_tab[i]];
     }
 };
-void Main_Joueur::attack_single(Carte_cible carte_cible){
+void Main_Joueur::attack_single(Carte_cible* carte_cible){
       int* position_tab = attack_number_carte(1);
     //TODO
     //Compare type
-    while (m_carte_en_main[position_tab[0]].get_value_carte() <= carte_cible.get_carte_cible()[0].get_value_carte()) {
-        if (m_carte_en_main[position_tab[0]].get_value_carte() == carte_cible.get_carte_cible()[0].get_value_carte() && m_carte_en_main[position_tab[0]].get_type_carte() > carte_cible.get_carte_cible()[0].get_type_carte()) {
+    while (m_carte_en_main[position_tab[0]].get_value_carte() <= carte_cible->get_carte_cible()[0].get_value_carte()) {
+        if (m_carte_en_main[position_tab[0]].get_value_carte() == carte_cible->get_carte_cible()[0].get_value_carte() && m_carte_en_main[position_tab[0]].get_type_carte() > carte_cible->get_carte_cible()[0].get_type_carte()) {
             break;
         }
         else
         position_tab = attack_number_carte(1);
     }
-    carte_cible.set_carte_cible(NULL);
-    set_carte_to_carte_to_fight(position_tab, carte_cible.get_carte_cible(), 1);
+    carte_cible->set_carte_cible(NULL);
+    set_carte_to_carte_to_fight(position_tab, carte_cible->get_carte_cible(), 1);
     set_carte_empty(position_tab);
 };
 //TODO
@@ -114,55 +114,55 @@ bool Main_Joueur::test_coueur(Carte carte_first, Carte carte_second){
     }
     return is_existed;
 };
-void Main_Joueur::attack_double(Carte_cible carte_cible_to_fight){
+void Main_Joueur::attack_double(Carte_cible* carte_cible_to_fight){
     int* position_tab = attack_number_carte(2);
     while (m_carte_en_main[position_tab[0]].get_value_carte()!=m_carte_en_main[position_tab[1]].get_value_carte()) {
         position_tab = attack_number_carte(1);
     }
-    while (m_carte_en_main[position_tab[0]].get_value_carte() <= carte_cible_to_fight.get_carte_cible()[0].get_value_carte()) {
-        if (m_carte_en_main[position_tab[0]].get_value_carte() == carte_cible_to_fight.get_carte_cible()[0].get_value_carte() && test_coueur(m_carte_en_main[position_tab[0]], m_carte_en_main[position_tab[1]])) {
+    while (m_carte_en_main[position_tab[0]].get_value_carte() <= carte_cible_to_fight->get_carte_cible()[0].get_value_carte()) {
+        if (m_carte_en_main[position_tab[0]].get_value_carte() == carte_cible_to_fight->get_carte_cible()[0].get_value_carte() && test_coueur(m_carte_en_main[position_tab[0]], m_carte_en_main[position_tab[1]])) {
             break;
         }
         else 
         position_tab = attack_number_carte(1);
     }
-    carte_cible_to_fight.set_carte_cible(NULL);
-    set_carte_to_carte_to_fight(position_tab, carte_cible_to_fight.get_carte_cible(), 2);
+    carte_cible_to_fight->set_carte_cible(NULL);
+    set_carte_to_carte_to_fight(position_tab, carte_cible_to_fight->get_carte_cible(), 2);
     set_carte_empty(position_tab);
 };
-void Main_Joueur::attack_trois(Carte_cible carte_cible_to_fight){
+void Main_Joueur::attack_trois(Carte_cible* carte_cible_to_fight){
     print_carte_en_main();
     int* position_tab = attack_number_carte(3);
     while (m_carte_en_main[position_tab[0]].get_value_carte()!=m_carte_en_main[position_tab[1]].get_value_carte()&&m_carte_en_main[position_tab[0]].get_value_carte()!=m_carte_en_main[position_tab[2]].get_value_carte()) {
         position_tab = attack_number_carte(1);
     }
-    while (m_carte_en_main[position_tab[0]].get_value_carte() <= carte_cible_to_fight.get_carte_cible()[0].get_value_carte()) {
-        if (m_carte_en_main[position_tab[0]].get_value_carte() == carte_cible_to_fight.get_carte_cible()[0].get_value_carte() && m_carte_en_main[position_tab[0]].get_type_carte() > carte_cible_to_fight.get_carte_cible()[0].get_type_carte()) {
+    while (m_carte_en_main[position_tab[0]].get_value_carte() <= carte_cible_to_fight->get_carte_cible()[0].get_value_carte()) {
+        if (m_carte_en_main[position_tab[0]].get_value_carte() == carte_cible_to_fight->get_carte_cible()[0].get_value_carte() && m_carte_en_main[position_tab[0]].get_type_carte() > carte_cible_to_fight->get_carte_cible()[0].get_type_carte()) {
             break;
         }
         else
             position_tab = attack_number_carte(1);
     }
-    carte_cible_to_fight.set_carte_cible(NULL);
-    set_carte_to_carte_to_fight(position_tab, carte_cible_to_fight.get_carte_cible(), 3);
+    carte_cible_to_fight->set_carte_cible(NULL);
+    set_carte_to_carte_to_fight(position_tab, carte_cible_to_fight->get_carte_cible(), 3);
     set_carte_empty(position_tab);
 };
 
-void Main_Joueur::attack_quarte(Carte_cible carte_cible_to_fight){
+void Main_Joueur::attack_quarte(Carte_cible* carte_cible_to_fight){
     int* position_tab = attack_number_carte(4);
     while ((m_carte_en_main[position_tab[0]].get_value_carte()!=m_carte_en_main[position_tab[1]].get_value_carte())&& (m_carte_en_main[position_tab[0]].get_value_carte()!=m_carte_en_main[position_tab[2]].get_value_carte())&& (m_carte_en_main[position_tab[0]].get_value_carte()!=m_carte_en_main[position_tab[3]].get_value_carte())) {
         position_tab = attack_number_carte(4);
         
     }
-    while (m_carte_en_main[position_tab[0]].get_value_carte() <= carte_cible_to_fight.get_carte_cible()[0].get_value_carte()) {
-        if (m_carte_en_main[position_tab[0]].get_value_carte() == carte_cible_to_fight.get_carte_cible()[0].get_value_carte() && m_carte_en_main[position_tab[0]].get_type_carte() > carte_cible_to_fight.get_carte_cible()[0].get_type_carte()) {
+    while (m_carte_en_main[position_tab[0]].get_value_carte() <= carte_cible_to_fight->get_carte_cible()[0].get_value_carte()) {
+        if (m_carte_en_main[position_tab[0]].get_value_carte() == carte_cible_to_fight->get_carte_cible()[0].get_value_carte() && m_carte_en_main[position_tab[0]].get_type_carte() > carte_cible_to_fight->get_carte_cible()[0].get_type_carte()) {
             break;
         }
         else
             position_tab = attack_number_carte(1);
     }
-    carte_cible_to_fight.set_carte_cible(NULL);
-    set_carte_to_carte_to_fight(position_tab, carte_cible_to_fight.get_carte_cible(), 4);
+    carte_cible_to_fight->set_carte_cible(NULL);
+    set_carte_to_carte_to_fight(position_tab, carte_cible_to_fight->get_carte_cible(), 4);
     set_carte_empty(position_tab);
 
 };
@@ -177,13 +177,13 @@ bool Main_Joueur::test_chain_carte(int number_of_carte, int* position_tab){
     return is_rise_by_1;
 };
 
-void Main_Joueur::attack_plural(Carte_cible carte_cible_to_fight){
+void Main_Joueur::attack_plural(Carte_cible* carte_cible_to_fight){
     print_carte_en_main();
     //TODO
     //Find the number of carte of the cible
     int number_of_carte(0);
     for (int i(0); i< 13; i++) {
-        if (carte_cible_to_fight.get_carte_cible()[i].get_empty()==0) {
+        if (carte_cible_to_fight->get_carte_cible()[i].get_empty()==0) {
             number_of_carte++;
         }
     }
@@ -200,15 +200,15 @@ void Main_Joueur::attack_plural(Carte_cible carte_cible_to_fight){
         }
     }
     int position_max_value_carte_cible(0);
-    Value_of_Carte max_value_carte_cible=carte_cible_to_fight.get_carte_cible()[0].get_value_carte();
+    Value_of_Carte max_value_carte_cible=carte_cible_to_fight->get_carte_cible()[0].get_value_carte();
     for (int i(1); i<number_of_carte; i++) {
-        if (max_value_carte_en_main < carte_cible_to_fight.get_carte_cible()[i].get_value_carte()) {
-            max_value_carte_cible=carte_cible_to_fight.get_carte_cible()[i].get_value_carte();
+        if (max_value_carte_en_main < carte_cible_to_fight->get_carte_cible()[i].get_value_carte()) {
+            max_value_carte_cible=carte_cible_to_fight->get_carte_cible()[i].get_value_carte();
             position_max_value_carte_cible=i;
         }
     }
     while (max_value_carte_en_main < max_value_carte_cible) {
-        if (max_value_carte_en_main == max_value_carte_cible && m_carte_en_main[position_max_value_carte_en_main].get_type_carte() > carte_cible_to_fight.get_carte_cible()[position_max_value_carte_cible].get_type_carte()) {
+        if (max_value_carte_en_main == max_value_carte_cible && m_carte_en_main[position_max_value_carte_en_main].get_type_carte() > carte_cible_to_fight->get_carte_cible()[position_max_value_carte_cible].get_type_carte()) {
             break;
         }
         else{
@@ -217,8 +217,8 @@ void Main_Joueur::attack_plural(Carte_cible carte_cible_to_fight){
         }
     }
     //lam sao de xoa phan tu trong ban carte_to_fight roik fill lai
-    carte_cible_to_fight.set_carte_cible(NULL);
-    set_carte_to_carte_to_fight(position_tab, carte_cible_to_fight.get_carte_cible(), number_of_carte);
+    carte_cible_to_fight->set_carte_cible(NULL);
+    set_carte_to_carte_to_fight(position_tab, carte_cible_to_fight->get_carte_cible(), number_of_carte);
     set_carte_empty(position_tab);
 };
 

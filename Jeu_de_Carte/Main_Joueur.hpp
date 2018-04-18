@@ -20,11 +20,11 @@ public:
     Main_Joueur();
     ~Main_Joueur();
     int* attack_number_carte(int number_of_carte);
-    void attack_single(Carte_cible carte_cible_to_fight);
-    void attack_double(Carte_cible carte_cible_to_fight);
-    void attack_plural(Carte_cible carte_cible_to_fight);
-    void attack_trois(Carte_cible carte_cible_to_fight);
-    void attack_quarte(Carte_cible carte_cible_to_fight);
+    void attack_single(Carte_cible* carte_cible_to_fight);
+    void attack_double(Carte_cible* carte_cible_to_fight);
+    void attack_plural(Carte_cible* carte_cible_to_fight);
+    void attack_trois(Carte_cible* carte_cible_to_fight);
+    void attack_quarte(Carte_cible* carte_cible_to_fight);
     void set_carte_en_main(Carte* carte_en_main);
     Carte* get_carte_en_main();
     void print_carte_en_main();
@@ -36,7 +36,6 @@ public:
     void set_carte_empty(int* position_tab);
     bool test_coueur(Carte carte_first, Carte carte_second);
     void set_carte_to_carte_to_fight(int position_tab[], Carte* carte_to_fight, int number_carte);
-
 private:
     
     Carte* m_carte_en_main;

@@ -72,29 +72,29 @@ bool Joueur::is_finish(){
 };
 
 //Déclarer action :  call function attack() in class Main
-Type_Attack Joueur::attack(Carte_cible cible){
+Type_Attack Joueur::attack(Carte_cible* cible){
         Type_Attack type_attack(attack_single);
-        if (cible.get_type_attack()==attack_single) {
-            m_main_joueur->attack_single(*cible.get_carte_cible());
-            cible.set_type_attack(attack_single);
+        if (cible->get_type_attack()==attack_single) {
+            m_main_joueur->attack_single(cible);
+            cible->set_type_attack(attack_single);
         }
-        else if (cible.get_type_attack()==attack_double){
-            m_main_joueur->attack_double(*cible.get_carte_cible());
-            cible.set_type_attack(attack_double);
+        else if (cible->get_type_attack()==attack_double){
+            m_main_joueur->attack_double(cible);
+            cible->set_type_attack(attack_double);
         }
-        else if (cible.get_type_attack()==attack_plural){
-            m_main_joueur->attack_plural(*cible.get_carte_cible());
-            cible.set_type_attack(attack_plural);
+        else if (cible->get_type_attack()==attack_plural){
+            m_main_joueur->attack_plural(cible);
+            cible->set_type_attack(attack_plural);
         }
-        else if (cible.get_type_attack()==attack_trois){
-            m_main_joueur->attack_trois(*cible.get_carte_cible());
-            cible.set_type_attack(attack_trois);
+        else if (cible->get_type_attack()==attack_trois){
+            m_main_joueur->attack_trois(cible);
+            cible->set_type_attack(attack_trois);
         }
-        else if (cible.get_type_attack()==attack_quarte){
-            m_main_joueur->attack_quarte(*cible.get_carte_cible());
-            cible.set_type_attack(attack_quarte);
+        else if (cible->get_type_attack()==attack_quarte){
+            m_main_joueur->attack_quarte(cible);
+            cible->set_type_attack(attack_quarte);
         }
     
     return type_attack;
 };
-
+void Joueur::determine_to_fight_or_not(Carte_cible* carte){};

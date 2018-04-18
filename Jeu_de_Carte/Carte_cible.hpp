@@ -9,19 +9,18 @@
 #ifndef Carte_cible_hpp
 #define Carte_cible_hpp
 #include "Carte.hpp"
-#include <stdio.h>
 #include "Utilities.hpp"
 
-class Carte_cible : public Carte{
+class Carte_cible {
 public:
     Carte_cible();
     ~Carte_cible();
-    Carte_cible* get_carte_cible();
-    void set_carte_cible(Carte_cible* carte_cible);
+    Carte* get_carte_cible();
+    void set_carte_cible(Carte* carte_cible);
     Type_Attack get_type_attack();
     void set_type_attack(Type_Attack type_attack);
 private:
-    Carte_cible* m_cible_to_figth;
+    Carte* m_cible_to_figth;
     Type_Attack m_type_attack;
 };
 

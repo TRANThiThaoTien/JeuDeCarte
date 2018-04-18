@@ -28,12 +28,13 @@ public:
     bool get_tour();
     void set_tour(bool tour);
     bool ignore();
-    Type_Attack attack(Carte_cible cible);
+    Type_Attack attack(Carte_cible* cible);
     Main_Joueur* get_main_jouer();
     void set_main_joueur(Main_Joueur* main);
     void set_winner(bool is_winner);
     bool get_winner();
     bool is_finish();
+    void determine_to_fight_or_not(Carte_cible* carte);
     
 protected:
     

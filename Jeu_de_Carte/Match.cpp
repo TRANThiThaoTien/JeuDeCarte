@@ -16,6 +16,7 @@ Match::Match(){
     m_tour = 0;
     m_nombre_joueur = 0;
     m_joueur_tab = NULL;
+    m_carte_cible = NULL;
     cout << "Ok to initialize the match !" << endl;
 };
 Match::~Match(){
@@ -64,24 +65,18 @@ void Match::initialize(){
     m_nombre_joueur = atoi(number_joueur_string.c_str());
     //m_joueur_tab = (Joueur *)malloc(m_nombre_joueur * sizeof(Joueur));
 	m_joueur_tab = new Joueur[m_nombre_joueur];
-	cout << "numboer of joueur " << m_nombre_joueur << endl;
+	cout << "number of joueur " << m_nombre_joueur << endl;
     for (int i(0); i < m_nombre_joueur; i++) {
         if (i==0) {
-            m_joueur_tab[0] = Joueur();
+            m_joueur_tab[0] = Joueur_physic();
             cout << "Enter your name" << endl;
-					cout << "A" << endl;
             string name_joueur_physic("");
             //getline(cin, name_joueur_physic);
 					cin >> name_joueur_physic;
             m_joueur_tab[0].set_name(name_joueur_physic);
-					cout << "B" << endl;
-
         }
         else{
-					cout << "C" << endl;
-            m_joueur_tab[i] = Joueur();
-					cout << "D" << endl;
-
+            m_joueur_tab[i] = Joueur_virtuel();
         }
     }
 };
@@ -107,6 +102,7 @@ void Match::find_smallest_carte(){
                 b_is_found = true;
                 m_tour = i;
                 cout << "tour :" <<m_tour << endl;
+                m_joueur_tab[m_tour].set_tour(true);
                 break;
             }
         }
@@ -115,19 +111,33 @@ void Match::find_smallest_carte(){
         }
     }
 };
-void Match::determine_tour(int number_joueur, Carte_cible carte_cible){
-//    int joueur_tour(0);
-//    while (!m_is_over) {
-//        // tim bai nho nhat de set m_tour
-//        
-//        joueur_tour = m_tour%number_joueur;
-//                m_joueur_tab[joueur_tour].set_tour(true);
-//        if (m_joueur_tab[joueur_tour].ignore() || m_joueur_tab[joueur_tour].attack(m_joueur_tab[joueur_tour].get_main_jouer(), carte_cible.get_type_attack())) {
-//                m_tour++;
-//        }
-//        
-//    }
-};
-
-            
+void Match::determine_tour(){
+    int position_joueur_playing = m_tour % m_nombre_joueur;
+    if (position_joueur_playing == 0) {
+        cout << "This is the card of competitor :" << endl;
+        for (int i(0); i < 13; i++) {
+            if (m_carte_cible->get_carte_cible()[i].get_empty() == 1) {
+                cout << m_carte_cible->get_carte_cible()[i].get_value_carte() <<"-"<< m_carte_cible->get_carte_cible()[i].get_value_carte() << endl;;
+            }
+        }
+        cout << "this is your cards :" << endl;
+        m_joueur_tab[0].get_main_jouer()->print_carte_en_main();
+        cout << "You want to ignore or attack? Press 1 to ignore and 2 to attack please! " << endl;
+        string decision;
+        getline(cin, decision);
+        if (decision == "1") {
+            m_joueur_tab[0].ignore();
+            cout << "A" << endl;
+        }
+        else if(decision == "2"){
+            m_joueur_tab[0].attack(m_carte_cible);
+            cout << "B" << endl;
+        }
+    }
+    else if (position_joueur_playing != 0){
+        // Strategy of virtual player
+        m_joueur_tab[position_joueur_playing].determine_to_fight_or_not(m_carte_cible);
+    }
+    m_tour++;
+};        
             

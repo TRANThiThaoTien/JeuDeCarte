@@ -9,6 +9,7 @@
 #include <iostream>
 #include "Jeu_de_Carte.hpp"
 #include "Match.hpp"
+#include "Carte_cible.hpp"
 
 using namespace std;
 //
@@ -56,9 +57,13 @@ int main(int argc, const char * argv[]) {
     Jeu_de_Carte carte_block;
     carte_block.set_carte();
     carte_block.distribute(&match);
+    Carte_cible cible;
     //while (!match.verify_is_over()) {
         match.find_smallest_carte();
-        match.set_tour(match.get_tour() + 1);
+        match.determine_tour();
+        //match.set_tour(match.get_tour() + 1);
+    
+    
     //}
 
     
