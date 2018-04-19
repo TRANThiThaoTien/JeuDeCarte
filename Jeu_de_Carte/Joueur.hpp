@@ -35,6 +35,8 @@ public:
     bool get_winner();
     bool is_finish();
     void determine_to_fight_or_not(Carte_cible* carte);
+    void set_classement(int classement);
+    int get_classement();
     
 protected:
     
@@ -43,5 +45,6 @@ protected:
     bool m_tour;
     Main_Joueur* m_main_joueur;
     bool m_is_winner;
+    int m_classement;
 };
 #endif /* Joueur_hpp */

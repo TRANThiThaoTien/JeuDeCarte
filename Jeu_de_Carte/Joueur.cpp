@@ -20,6 +20,7 @@ Joueur::Joueur(){
     m_tour = false;
     m_is_winner = false;
     m_is_finish = false;
+    m_classement = 0;
 };
 
 Joueur::~Joueur(){
@@ -98,3 +99,9 @@ Type_Attack Joueur::attack(Carte_cible* cible){
     return type_attack;
 };
 void Joueur::determine_to_fight_or_not(Carte_cible* carte){};
+void Joueur::set_classement(int classement){
+    m_classement = classement;
+};
+int Joueur::get_classement(){
+    return m_classement;
+};

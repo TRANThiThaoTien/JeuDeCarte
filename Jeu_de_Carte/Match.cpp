@@ -140,4 +140,15 @@ void Match::determine_tour(){
     }
     m_tour++;
 };        
-            
+void Match::set_first_attack(bool is_first_attack){
+    m_is_first_attack = is_first_attack;
+};
+bool verify_first_attack(){
+    return m_is_first_attack;
+};
+void set_obligation_to_fight(bool is_obligated_to_fight){
+    m_is_obligated_to_fight = is_obligated_to_fight;
+};
+bool verify_obligation_to_fight(){
+    return m_is_obligated_to_fight;
+};

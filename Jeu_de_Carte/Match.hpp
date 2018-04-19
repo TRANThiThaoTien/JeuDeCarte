@@ -29,7 +29,10 @@ public:
     bool verify_is_over();
     void find_smallest_carte();
     void determine_tour();
-
+    void set_first_attack(bool is_first_attack);
+    bool verify_first_attack();
+    void set_obligation_to_fight(bool is_obligated_to_fight);
+    bool verify_obligation_to_fight();
     
 private:
     
@@ -38,6 +41,8 @@ private:
     Joueur* m_joueur_tab;
     Carte_cible* m_carte_cible;
     int m_nombre_joueur;
+    bool m_is_first_attack;
+    bool m_is_obligated_to_fight;
 };
 
 
