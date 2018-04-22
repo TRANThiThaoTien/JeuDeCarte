@@ -57,10 +57,11 @@ int main(int argc, const char * argv[]) {
     Jeu_de_Carte carte_block;
     carte_block.set_carte();
     carte_block.distribute(&match);
-    Carte_cible cible;
+    Carte* min_carte = match.find_smallest_carte();
+    cout << "Min joueur "  << match.get_tour() << endl;
+    cout << "Min Carte " << min_carte->get_value_carte() << " - " << min_carte->get_type_carte() << endl;
     //while (!match.verify_is_over()) {
-        match.find_smallest_carte();
-         //match.set_tour(match.get_tour() + 1);
+          //match.set_tour(match.get_tour() + 1);
     
     
     //}

@@ -92,24 +92,26 @@ bool Match::verify_is_over(){
     }
     return m_is_over;
 };
-void Match::find_smallest_carte(){
-    bool b_is_found(0);
+Carte* Match::find_smallest_carte(){
+    Value_of_Carte min_value(Deux);
+    Type_of_Carte min_type(Coeur);
+    Carte* min_carte = new Carte(min_value, min_type);
     for (int i(0); i < m_nombre_joueur; i++) {
-        cout << i << endl;
-        for (int j(0); j < 13; j++) {
-            cout << j << endl;
-            if (m_joueur_tab[i].get_main_jouer()->get_carte_en_main()[j].get_value_carte() == Trois && m_joueur_tab[i].get_main_jouer()->get_carte_en_main()[j].get_type_carte() == Pique) {
-                b_is_found = true;
-                m_tour = i;
-                cout << "tour :" <<m_tour << endl;
-                m_joueur_tab[m_tour].set_tour(true);
-                break;
-            }
-        }
-        if (b_is_found) {
-            break;
+         for (int j(0); j < 13; j++) {
+             if (m_joueur_tab[i].get_main_jouer()->get_carte_en_main()[j].get_value_carte() < min_carte->get_value_carte()){
+                 m_tour = i;
+                 m_joueur_tab[m_tour].set_tour(true);
+                 min_carte->copy_from_carte(m_joueur_tab[i].get_main_jouer()->get_carte_en_main()[j]);
+             }else if (m_joueur_tab[i].get_main_jouer()->get_carte_en_main()[j].get_value_carte() == min_carte->get_value_carte()){
+                 if (m_joueur_tab[i].get_main_jouer()->get_carte_en_main()[j].get_type_carte() < min_carte->get_type_carte()) {
+                     m_tour = i;
+                     m_joueur_tab[m_tour].set_tour(true);
+                     min_carte->copy_from_carte(m_joueur_tab[i].get_main_jouer()->get_carte_en_main()[j]);
+                 }
+             }
         }
     }
+    return  min_carte;
 };
 void Match::set_first_attack(bool is_first_attack){
     m_is_first_attack = is_first_attack;

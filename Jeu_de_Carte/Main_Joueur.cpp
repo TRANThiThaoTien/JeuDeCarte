@@ -33,7 +33,7 @@ Carte* Main_Joueur::get_carte_en_main(){
 void Main_Joueur:: print_carte_en_main(){
     for (int i(0); i<13; i++) {
         if (m_carte_en_main[i].get_valide() != 0) {
-            cout<< "position " << i << ":" << m_carte_en_main[i].get_type_carte() << "-"<<m_carte_en_main[i].get_value_carte() << endl;
+            cout<< "position " << i << ":" << m_carte_en_main[i].get_value_carte() << "-"<<m_carte_en_main[i].get_type_carte() << endl;
         }
     }
 };
