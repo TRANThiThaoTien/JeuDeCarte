@@ -18,7 +18,6 @@ Joueur::Joueur(){
     m_main_joueur = new Main_Joueur();
     m_name = "";
     m_tour = false;
-    m_is_winner = false;
     m_is_finish = false;
     m_classement = 0;
 };
@@ -40,29 +39,18 @@ bool Joueur::get_tour(){
 void Joueur::set_tour(bool tour){
     m_tour=tour;
 };
-
-void Joueur::set_main_joueur(Main_Joueur* main){
-    m_main_joueur = main;
-};
-bool Joueur::ignore(){
+void Joueur::ignore(){
     if (m_tour==true) {
         m_tour=false;
     }
-    return m_tour;
 };
 Main_Joueur* Joueur::get_main_jouer(){
     return m_main_joueur;
 };
-void Joueur::set_winner(bool is_winner){
-    m_is_winner=is_winner;
-};
-bool Joueur::get_winner(){
-    return m_is_winner;
-};
-bool Joueur::is_finish(){
+bool Joueur::verify_is_finish(){
     int number_verified(0);
     for (int i(0); i < 13; i++) {
-        if (m_main_joueur->get_carte_en_main()[i].get_empty() == 0) {
+        if (m_main_joueur->get_carte_en_main()[i].get_valide() == 0) {
             number_verified++;
         }
     }
@@ -71,34 +59,6 @@ bool Joueur::is_finish(){
     }
     return m_is_finish;
 };
-
-//Déclarer action :  call function attack() in class Main
-Type_Attack Joueur::attack(Carte_cible* cible){
-        Type_Attack type_attack(attack_single);
-        if (cible->get_type_attack()==attack_single) {
-            m_main_joueur->attack_single(cible);
-            cible->set_type_attack(attack_single);
-        }
-        else if (cible->get_type_attack()==attack_double){
-            m_main_joueur->attack_double(cible);
-            cible->set_type_attack(attack_double);
-        }
-        else if (cible->get_type_attack()==attack_plural){
-            m_main_joueur->attack_plural(cible);
-            cible->set_type_attack(attack_plural);
-        }
-        else if (cible->get_type_attack()==attack_trois){
-            m_main_joueur->attack_trois(cible);
-            cible->set_type_attack(attack_trois);
-        }
-        else if (cible->get_type_attack()==attack_quarte){
-            m_main_joueur->attack_quarte(cible);
-            cible->set_type_attack(attack_quarte);
-        }
-    
-    return type_attack;
-};
-void Joueur::determine_to_fight_or_not(Carte_cible* carte){};
 void Joueur::set_classement(int classement){
     m_classement = classement;
 };

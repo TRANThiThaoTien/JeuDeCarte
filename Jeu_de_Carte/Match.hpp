@@ -28,7 +28,6 @@ public:
     bool test_int(string number_string);
     bool verify_is_over();
     void find_smallest_carte();
-    void determine_tour();
     void set_first_attack(bool is_first_attack);
     bool verify_first_attack();
     void set_obligation_to_fight(bool is_obligated_to_fight);

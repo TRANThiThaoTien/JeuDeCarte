@@ -83,7 +83,7 @@ void Match::initialize(){
 bool Match::verify_is_over(){
     int number_finish(0);
     for (int i(0); i<m_nombre_joueur; i++) {
-        if (m_joueur_tab[i].is_finish() == true) {
+        if (m_joueur_tab[i].verify_is_finish() == true) {
             number_finish++;
         }
     }
@@ -111,44 +111,15 @@ void Match::find_smallest_carte(){
         }
     }
 };
-void Match::determine_tour(){
-    int position_joueur_playing = m_tour % m_nombre_joueur;
-    if (position_joueur_playing == 0) {
-        cout << "This is the card of competitor :" << endl;
-        for (int i(0); i < 13; i++) {
-            if (m_carte_cible->get_carte_cible()[i].get_empty() == 1) {
-                cout << m_carte_cible->get_carte_cible()[i].get_value_carte() <<"-"<< m_carte_cible->get_carte_cible()[i].get_value_carte() << endl;;
-            }
-        }
-        cout << "this is your cards :" << endl;
-        m_joueur_tab[0].get_main_jouer()->print_carte_en_main();
-        cout << "You want to ignore or attack? Press 1 to ignore and 2 to attack please! " << endl;
-        string decision;
-        getline(cin, decision);
-        if (decision == "1") {
-            m_joueur_tab[0].ignore();
-            cout << "A" << endl;
-        }
-        else if(decision == "2"){
-            m_joueur_tab[0].attack(m_carte_cible);
-            cout << "B" << endl;
-        }
-    }
-    else if (position_joueur_playing != 0){
-        // Strategy of virtual player
-        m_joueur_tab[position_joueur_playing].determine_to_fight_or_not(m_carte_cible);
-    }
-    m_tour++;
-};        
 void Match::set_first_attack(bool is_first_attack){
     m_is_first_attack = is_first_attack;
 };
-bool verify_first_attack(){
+bool Match::verify_first_attack(){
     return m_is_first_attack;
 };
-void set_obligation_to_fight(bool is_obligated_to_fight){
+void Match::set_obligation_to_fight(bool is_obligated_to_fight){
     m_is_obligated_to_fight = is_obligated_to_fight;
 };
-bool verify_obligation_to_fight(){
+bool Match::verify_obligation_to_fight(){
     return m_is_obligated_to_fight;
 };

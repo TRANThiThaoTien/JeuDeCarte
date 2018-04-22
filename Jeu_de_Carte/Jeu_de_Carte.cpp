@@ -11,7 +11,6 @@
 Jeu_de_Carte::Jeu_de_Carte(){
 	m_carte_tab = new Carte[52];
 }
-// Pareillement de déstructeur
 Jeu_de_Carte::~Jeu_de_Carte(){
 	if (!m_carte_tab) {
 		delete[] m_carte_tab;
@@ -20,7 +19,6 @@ Jeu_de_Carte::~Jeu_de_Carte(){
 void Jeu_de_Carte::set_carte(){
     Type_of_Carte type_carte(Coeur);
     Value_of_Carte value_carte(A);
-    int empty(1);
     int carte_position(0);
     for (int i(0); i < 4; i++) {
         int j(0);
@@ -67,7 +65,7 @@ void Jeu_de_Carte::set_carte(){
                     value_carte = R;
                 }
                 carte_position = 13*i + j;
-                m_carte_tab[carte_position] = Carte(value_carte, type_carte, empty);
+                m_carte_tab[carte_position] = Carte(value_carte, type_carte);
             }
         }
         else if (i%4==1){
@@ -113,7 +111,7 @@ void Jeu_de_Carte::set_carte(){
                     value_carte = R;
                 }
                 carte_position = 13*i + j;
-                m_carte_tab[carte_position] = Carte(value_carte, type_carte, empty);
+                m_carte_tab[carte_position] = Carte(value_carte, type_carte);
             }
         }
         else if (i%4==2){
@@ -159,7 +157,7 @@ void Jeu_de_Carte::set_carte(){
                     value_carte = R;
                 }
                 carte_position = 13*i + j;
-                m_carte_tab[carte_position] = Carte(value_carte, type_carte, empty);
+                m_carte_tab[carte_position] = Carte(value_carte, type_carte);
             }
         }
         else {
@@ -205,7 +203,7 @@ void Jeu_de_Carte::set_carte(){
                     value_carte = R;
                 }
                 carte_position = 13*i + j;
-                m_carte_tab[carte_position] = Carte(value_carte, type_carte, empty);
+                m_carte_tab[carte_position] = Carte(value_carte, type_carte);
             }
         }
     }
@@ -238,8 +236,7 @@ void Jeu_de_Carte:: distribute(Match* match){
     int position_max(51);
     int number_carte_rest(52);
     for (int i(0); i<match->get_nombre_joueur(); i++) {
-        // Carte* carte_en_main = (Carte *)malloc(13*sizeof(Carte));
-			Carte* carte_en_main = new Carte[13];
+        Carte* carte_en_main = new Carte[13];
         int number_carte_en_main(0);
         while (number_carte_en_main<13) {
             int position_carte(0);

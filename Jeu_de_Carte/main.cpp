@@ -60,8 +60,7 @@ int main(int argc, const char * argv[]) {
     Carte_cible cible;
     //while (!match.verify_is_over()) {
         match.find_smallest_carte();
-        match.determine_tour();
-        //match.set_tour(match.get_tour() + 1);
+         //match.set_tour(match.get_tour() + 1);
     
     
     //}

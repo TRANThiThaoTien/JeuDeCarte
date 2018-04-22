@@ -27,24 +27,22 @@ public:
     void set_name(string name);
     bool get_tour();
     void set_tour(bool tour);
-    bool ignore();
+    void ignore();
     Type_Attack attack(Carte_cible* cible);
     Main_Joueur* get_main_jouer();
     void set_main_joueur(Main_Joueur* main);
     void set_winner(bool is_winner);
     bool get_winner();
-    bool is_finish();
+    bool verify_is_finish();
     void determine_to_fight_or_not(Carte_cible* carte);
     void set_classement(int classement);
     int get_classement();
     
 protected:
-    
+    Main_Joueur* m_main_joueur;
     string m_name;
     bool m_is_finish;
     bool m_tour;
-    Main_Joueur* m_main_joueur;
-    bool m_is_winner;
     int m_classement;
 };
 #endif /* Joueur_hpp */
