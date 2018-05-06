@@ -15,6 +15,7 @@
 
 class Joueur_virtuel : public Joueur{
 public:
+    virtual void affichage();
 };
 
 #endif /* Joueur_virtuel_hpp */

@@ -15,6 +15,7 @@
 
 class Joueur_physic : public Joueur{
 public:
+   virtual void affichage();
  };
 
 #endif /* Joueur_physic_hpp */

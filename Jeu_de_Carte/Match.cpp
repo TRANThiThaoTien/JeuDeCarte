@@ -17,6 +17,7 @@ Match::Match(){
     m_nombre_joueur = 0;
     m_joueur_tab = NULL;
     m_carte_cible = NULL;
+    m_is_first_attack = true;
     cout << "Ok to initialize the match !" << endl;
 };
 Match::~Match(){
@@ -124,4 +125,10 @@ void Match::set_obligation_to_fight(bool is_obligated_to_fight){
 };
 bool Match::verify_obligation_to_fight(){
     return m_is_obligated_to_fight;
+};
+Carte_cible* Match::get_carte_cible(){
+    return m_carte_cible;
+};
+void Match::set_carte_cible(Carte_cible *carte_cible){
+    m_carte_cible = carte_cible;
 };

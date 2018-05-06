@@ -15,12 +15,13 @@ class Carte_cible {
 public:
     Carte_cible();
     ~Carte_cible();
-    Carte* get_carte_cible();
-    void set_carte_cible(Carte* carte_cible);
+    vector<Carte> get_carte_cible();
+    void set_carte_cible(vector<Carte> carte_cible);
     Type_Attack get_type_attack();
-    void set_type_attack(Type_Attack type_attack);
+    void set_type_attack(int choix);
+    void print();
 private:
-    Carte* m_cible_to_figth;
+    vector<Carte> m_cible_to_figth;
     Type_Attack m_type_attack;
 };
 

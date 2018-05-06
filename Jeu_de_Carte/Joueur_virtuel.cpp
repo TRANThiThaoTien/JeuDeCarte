@@ -13,3 +13,6 @@
 
 using namespace std;
  
+void Joueur_virtuel::affichage(){
+    cout << "It's joueur virtuel" << endl;
+}

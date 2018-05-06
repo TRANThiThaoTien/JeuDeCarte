@@ -33,6 +33,9 @@ public:
     void set_obligation_to_fight(bool is_obligated_to_fight);
     bool verify_obligation_to_fight();
     
+    Carte_cible* get_carte_cible();
+    void set_carte_cible(Carte_cible* carte_cible);
+
 private:
     
     bool m_is_over;

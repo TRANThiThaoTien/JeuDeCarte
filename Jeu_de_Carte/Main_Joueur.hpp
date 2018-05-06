@@ -22,8 +22,14 @@ public:
     void set_carte_en_main(Carte* carte_en_main);
     Carte* get_carte_en_main();
     void print_carte_en_main();
+    void set_carte_same_value(Carte carte);
+    vector<Carte> get_carte_same_value();
+    void set_carte_chaine(Carte carte);
+    vector<Carte> get_carte_chaine();
  private:
     Carte* m_carte_en_main;
+    vector<Carte> m_carte_same_value;
+    vector<Carte> m_carte_chaine;
 };
 
 

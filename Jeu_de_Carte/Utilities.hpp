@@ -12,6 +12,7 @@
 #include <iostream>
 #include <string>
 #include <map>
+#include <vector>
 
 using namespace std;
 
@@ -38,11 +39,11 @@ enum Value_of_Carte {
 };
 
 enum Type_Attack {
-    attack_single,
-    attack_double,
-    attack_trois,
-    attack_quarte,
-    attack_plural
+    attack_single = 1,
+    attack_double = 2,
+    attack_trois = 3,
+    attack_quarte = 4,
+    attack_plural = 5
 };
 
 #endif /* Utilities_h */

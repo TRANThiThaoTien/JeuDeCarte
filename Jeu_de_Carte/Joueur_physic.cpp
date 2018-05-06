@@ -11,4 +11,6 @@
 using namespace std;
 
 
-
+void Joueur_physic::affichage(){
+    cout << "It's a joueur physic" << endl;
+};
